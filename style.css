@@ -2,3 +2,19 @@
     height:450px;
 
 }
+
+.servicos img{
+    height:300px;
+    width:250;
+}
+
+
+.rodape img{
+    height:150px;
+    width:150;  
+}
+
+.rodape {
+    background-color: #F0E68C;
+    font-size:13px; 
+}
