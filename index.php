@@ -37,45 +37,35 @@
 <div class="container-fluid">
   <div class="row text-center titulo">
           <h1><i>Departamentos</i></h1>
-      </div>
   </div>
 </div>
 
+
 <div class="container-fluid">
-<div class="row text-center servicos" >
-    <div class="col-md-4">
-      <img src="imagens/cachoro.jpg" class="img-fluid">
-      <h4>Cachorro</h4>
-    </div>
+  <div class="row text-center servicos" >
+      <div class="col-md-4">
+        <img src="imagens/cachoro.jpg" class="img-fluid">
+        <h4>Cachorro</h4>
+      </div>
 
-    <div class="col-md-4">
-      <img src="imagens/gato.webp" class="img-fluid">
-      <h4>Gatos</h4>
-    </div>
+      <div class="col-md-4">
+        <img src="imagens/gato.webp" class="img-fluid">
+        <h4>Gatos</h4>
+      </div>
 
-    <div class="col-md-4">
-      <img src="imagens/outrospets.webp" class="img-fluid">
-      <h4>Outros Pets</h4>
-    </div>
-
-    <div class="container-fluid">
-      <div class="row text-center">
-          <div class="col-md-12">
-              <h1></h1>
-          </div>
+      <div class="col-md-4">
+        <img src="imagens/outrospets.webp" class="img-fluid">
+        <h4>Outros Pets</h4>
       </div>
   </div>
-  <ul class="separator">
-   
-  </ul>
-  <div class="container-fluid">
-    <div class="row text-center titulo">
-           <h1><i>Serviços</i></h1>
-        </div>
-    </div>
-  </div>
+
+    
   
-  <div class="container-fluid">
+    <div class="row text-center titulo">
+          <h1><i>Serviços</i></h1>
+    </div>
+      
+  
   <div class="row text-center servicos" >
       <div class="col-md-4">
         <img src="imagens/banhoetosa.png" class="img-fluid">
@@ -91,14 +81,10 @@
         <img src="imagens/veterinari.jpg" class="img-fluid">
         <h4>Veterinário</h4>
       </div>
+   </div>
   
-      <div class="container-fluid">
-        <div class="row text-center">
-            <div class="col-md-12">
-                <h1></h1>
-            </div>
-        </div>
-    </div>
+     
+  </div>
 
     <?php
         require_once 'footer.php';
