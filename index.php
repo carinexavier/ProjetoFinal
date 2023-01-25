@@ -35,9 +35,8 @@
 </div>
 
 <div class="container-fluid">
-  <div class="row text-center">
-      <div class="col-md-12">
-          <h1>Produtos Recomendados</h1>
+  <div class="row text-center titulo">
+          <h1><i>Departamentos</i></h1>
       </div>
   </div>
 </div>
@@ -45,18 +44,18 @@
 <div class="container-fluid">
 <div class="row text-center servicos" >
     <div class="col-md-4">
-      <img src="imagens/coleira.avif" class="img-fluid">
-      <h4>Coleiras</h4>
+      <img src="imagens/cachoro.jpg" class="img-fluid">
+      <h4>Cachorro</h4>
     </div>
 
     <div class="col-md-4">
-      <img src="imagens/racoes.jpg" class="img-fluid">
-      <h4>Rações</h4>
+      <img src="imagens/gato.webp" class="img-fluid">
+      <h4>Gatos</h4>
     </div>
 
     <div class="col-md-4">
-      <img src="imagens/cama.jpg" class="img-fluid">
-      <h4>Camas</h4>
+      <img src="imagens/outrospets.webp" class="img-fluid">
+      <h4>Outros Pets</h4>
     </div>
 
     <div class="container-fluid">
@@ -70,9 +69,8 @@
    
   </ul>
   <div class="container-fluid">
-    <div class="row text-center">
-        <div class="col-md-12">
-           
+    <div class="row text-center titulo">
+           <h1><i>Serviços</i></h1>
         </div>
     </div>
   </div>
@@ -80,18 +78,18 @@
   <div class="container-fluid">
   <div class="row text-center servicos" >
       <div class="col-md-4">
-        <img src="imagens/arranhadores.webp" class="img-fluid">
-        <h4>Coleiras</h4>
+        <img src="imagens/banhoetosa.png" class="img-fluid">
+        <h4>Banho e Tosa</h4>
       </div>
   
       <div class="col-md-4">
-        <img src="imagens/casacachorro.webp" class="img-fluid">
-        <h4>Rações</h4>
+        <img src="imagens/farmacia.jpg" class="img-fluid">
+        <h4>Farmácia</h4>
       </div>
   
       <div class="col-md-4">
-        <img src="imagens/viveiro.jpg" class="img-fluid">
-        <h4>Camas</h4>
+        <img src="imagens/veterinari.jpg" class="img-fluid">
+        <h4>Veterinário</h4>
       </div>
   
       <div class="container-fluid">

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg" style="background-color: #F0E68C;">
-        <a class="navbar-brand" href="#"><img src="imagens/withlovevazado.png" width="100" height="100" alt=""></a>
+        <a class="navbar-brand" href="index.php"><img src="imagens/withlovevazado.png" width="100" height="100" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -11,9 +11,9 @@
                   Serviços
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Banho e Tosa</a>
-                  <a class="dropdown-item" href="#">Adestramento</a>
-                  <a class="dropdown-item" href="#">Veterinário</a>
+                  <a class="dropdown-item" href="banhoetosa.php">Banho e Tosa</a>
+                  <a class="dropdown-item" href="farmacia.php">Farmácia</a>
+                  <a class="dropdown-item" href="veterinario.php">Veterinário</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
