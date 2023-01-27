@@ -40,7 +40,6 @@
   </div>
 </div>
 
-
 <div class="container-fluid">
   <div class="row text-center servicos" >
       <div class="col-md-4">

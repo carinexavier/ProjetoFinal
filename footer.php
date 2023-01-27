@@ -1,8 +1,7 @@
 <div class="container-fluid">
       <div class="row text-center rodape" >
           <div class="col-md-4 logo">
-            <img src="imagens/logovazadocut.png" class="img-fluid">
-            
+            <img src="imagens/logovazadocut.png" class="img-fluid"> 
           </div>
   
           <div class="col-md-4">
@@ -11,34 +10,30 @@
             <a class="nav-link" href="#">Email <i class="fa-regular fa-envelope"></i></a>
             <a class="nav-link" href="#">Instragram <i class="fa-brands fa-instagram"></i></a>
           </div>
-  
-  
-          
+
           <div class="col-md-4">
             <b>Menu</b>
-            <ul class="navbar-nav mr-auto menu2">
+            <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
                 <a class="nav-link" href="index.php">Home <span class="sr-only">(página atual)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="servicos.php">Serviços</a>
+                <a class="nav-link" href="promocoes.php">Promoções</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="sobrenos.php">Sobre Nós</a>
               </li>
-            </ul>
-              
+            </ul> 
           </div>
-
       </div>
 
-      <div class="row text-center">
+      <div class="row text-center rodape">
         <div class="col-md-12">
           <div>&copy; 2023 With Love</div>
         </div>
       </div>
-
-    </div>
+</div>
+    
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

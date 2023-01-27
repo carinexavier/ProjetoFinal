@@ -21,7 +21,7 @@
                 Departamentos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="dpcachorros.php">Cachorros</a>
+                <a class="dropdown-item" href="dpcachorro.php">Cachorros</a>
                 <a class="dropdown-item" href="dpgatos.php">Gatos</a>
                 <a class="dropdown-item" href="dppets.php">Outros Pets</a>
               </div>
