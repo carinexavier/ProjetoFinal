@@ -44,17 +44,17 @@
   <div class="row text-center servicos" >
       <div class="col-md-4">
         <img src="imagens/cachoro.jpg" class="img-fluid">
-        <h4>Cachorro</h4>
+        <a href="dpcachorro.php"><h4>Cachorro</h4></a>
       </div>
 
       <div class="col-md-4">
         <img src="imagens/gato.webp" class="img-fluid">
-        <h4>Gatos</h4>
+        <a href="dpgatos.php"><h4>Gatos</h4></a>
       </div>
 
       <div class="col-md-4">
         <img src="imagens/outrospets.webp" class="img-fluid">
-        <h4>Outros Pets</h4>
+        <a href="dppets.php"><h4>Outros Pets</h4></a>
       </div>
   </div>
 
@@ -68,17 +68,17 @@
   <div class="row text-center servicos" >
       <div class="col-md-4">
         <img src="imagens/banhoetosa.png" class="img-fluid">
-        <h4>Banho e Tosa</h4>
+        <a href="banhoetosa.php"><h4>Banho e Tosa</h4></a>
       </div>
   
       <div class="col-md-4">
         <img src="imagens/farmacia.jpg" class="img-fluid">
-        <h4>Farmácia</h4>
+        <a href="farmacia.php"><h4>Farmácia</h4></a>
       </div>
   
       <div class="col-md-4">
         <img src="imagens/veterinari.jpg" class="img-fluid">
-        <h4>Veterinário</h4>
+        <a href="veterinario.php"><h4>Veterinário</h4></a>
       </div>
    </div>
   

@@ -18,27 +18,27 @@
             <img src="imagens/arranhadores.webp" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
                 <h5 class="card-title">Arranhador</h5>
-                <a href="#" class="btn btn-primary">R$</a>
+                <a href="#" class="btn btn-primary">R$45,97</a>
             </div>
         </div>
         </div>
 
         <div class="col-md-4">
         <div class="card" style="width: 18rem;">
-            <img src="imagens/antitablete.webp" class="card-img-top" alt="Imagem de capa do card">
+            <img src="imagens/coleiragato.webp" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
-                <h5 class="card-title">Antipulgas em tablete</h5>
-                <a href="#" class="btn btn-primary">R$</a>
+                <h5 class="card-title">Coleira para Gato</h5>
+                <a href="#" class="btn btn-primary">R$26,99</a>
             </div>
         </div>
         </div>
 
         <div class="col-md-4">
         <div class="card" style="width: 18rem;">
-            <img src="imagens/supaminomix.webp" class="card-img-top" alt="Imagem de capa do card">
+            <img src="imagens/luva.jpg" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
-                <h5 class="card-title">Suplemento aminomix</h5>
-                <a href="#" class="btn btn-primary">R$</a>
+                <h5 class="card-title">Luva tira pelo</h5>
+                <a href="#" class="btn btn-primary">R$15,97</a>
             </div>
         </div>
         </div>
@@ -49,30 +49,30 @@
     <div class="row">
         <div class="col-md-4">
         <div class="card" style="width: 18rem;">
-            <img src="imagens/casacachorro.webp" class="card-img-top" alt="Imagem de capa do card">
+            <img src="imagens/escova.jpg" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
-                <h5 class="card-title">Casinha</h5>
-                <a href="#" class="btn btn-primary">R$</a>
+                <h5 class="card-title">Escova de canto</h5>
+                <a href="#" class="btn btn-primary">R$8,99</a>
             </div>
         </div>
         </div>
 
         <div class="col-md-4">
         <div class="card" style="width: 18rem;">
-            <img src="imagens/coleira.avif" class="card-img-top" alt="Imagem de capa do card">
+            <img src="imagens/casagato.jpg" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
-                <h5 class="card-title">Coleira</h5>
-                <a href="#" class="btn btn-primary">R$</a>
+                <h5 class="card-title">Casa para Gato</h5>
+                <a href="#" class="btn btn-primary">R$95,99</a>
             </div>
         </div>
         </div>
 
         <div class="col-md-4">
         <div class="card" style="width: 18rem;">
-            <img src="imagens/cama.jpg" class="card-img-top" alt="Imagem de capa do card">
+            <img src="imagens/catnips.webp" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
-                <h5 class="card-title">Cama</h5>
-                <a href="#" class="btn btn-primary">R$</a>
+                <h5 class="card-title">Catnip</h5>
+                <a href="#" class="btn btn-primary">R$14,98</a>
             </div>
         </div>
         </div>

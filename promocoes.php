@@ -15,30 +15,30 @@
     <div class="row">
         <div class="col-md-4">
         <div class="card" style="width: 18rem;">
-            <img src="imagens/casacachorro.webp" class="card-img-top" alt="Imagem de capa do card">
+            <img src="imagens/dispenser.jpg" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
-                <h5 class="card-title">Casinha</h5>
-                <a href="#" class="btn btn-primary">R$</a>
+                <h5 class="card-title">Dispenser saquinho</h5>
+                <a href="#" class="btn btn-primary">R$13,99</a>
             </div>
         </div>
         </div>
 
         <div class="col-md-4">
         <div class="card" style="width: 18rem;">
-            <img src="imagens/coleira.avif" class="card-img-top" alt="Imagem de capa do card">
+            <img src="imagens/kit.webp" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
-                <h5 class="card-title">Coleira</h5>
-                <a href="#" class="btn btn-primary">R$</a>
+                <h5 class="card-title">Kit brinquedos</h5>
+                <a href="#" class="btn btn-primary">R$29,97</a>
             </div>
         </div>
         </div>
 
         <div class="col-md-4">
         <div class="card" style="width: 18rem;">
-            <img src="imagens/cama.jpg" class="card-img-top" alt="Imagem de capa do card">
+            <img src="imagens/escovacdispenser.webp" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
-                <h5 class="card-title">Cama</h5>
-                <a href="#" class="btn btn-primary">R$</a>
+                <h5 class="card-title">Escova com dispenser</h5>
+                <a href="#" class="btn btn-primary">R$6,99</a>
             </div>
         </div>
         </div>
@@ -49,30 +49,30 @@
     <div class="row">
         <div class="col-md-4">
         <div class="card" style="width: 18rem;">
-            <img src="imagens/casacachorro.webp" class="card-img-top" alt="Imagem de capa do card">
+            <img src="imagens/racaoca.webp" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
-                <h5 class="card-title">Casinha</h5>
-                <a href="#" class="btn btn-primary">R$</a>
+                <h5 class="card-title">Ração para Cachorro</h5>
+                <a href="#" class="btn btn-primary">R$99,99</a>
             </div>
         </div>
         </div>
 
         <div class="col-md-4">
         <div class="card" style="width: 18rem;">
-            <img src="imagens/coleira.avif" class="card-img-top" alt="Imagem de capa do card">
+            <img src="imagens/whiskas.webp" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
-                <h5 class="card-title">Coleira</h5>
-                <a href="#" class="btn btn-primary">R$</a>
+                <h5 class="card-title">Ração para Gato</h5>
+                <a href="#" class="btn btn-primary">R$49,94</a>
             </div>
         </div>
         </div>
 
         <div class="col-md-4">
         <div class="card" style="width: 18rem;">
-            <img src="imagens/cama.jpg" class="card-img-top" alt="Imagem de capa do card">
+            <img src="imagens/racaopassaro.webp" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
-                <h5 class="card-title">Cama</h5>
-                <a href="#" class="btn btn-primary">R$</a>
+                <h5 class="card-title">Ração para Calopsita</h5>
+                <a href="#" class="btn btn-primary">R$6,50</a>
             </div>
         </div>
         </div>
