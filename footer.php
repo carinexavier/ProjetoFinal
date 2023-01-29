@@ -18,10 +18,10 @@
                 <a class="nav-link" href="index.php">Home <span class="sr-only">(página atual)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="promocoes.php">Promoções</a>
+                <a class="nav-link" href="sobrenos.php">Sobre Nós</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="sobrenos.php">Sobre Nós</a>
+                <a class="nav-link" href="admin.php">Área Admnistrativa</a>
               </li>
             </ul> 
           </div>

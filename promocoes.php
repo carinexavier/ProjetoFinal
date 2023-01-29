@@ -6,7 +6,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12 text-center">
-            <h1>Produtos para seu cachorro</h1>
+            <h1>Promoções</h1>
         </div>
     </div>
 </div>
