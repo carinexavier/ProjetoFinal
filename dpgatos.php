@@ -3,22 +3,23 @@
     require_once 'menu.php';
 ?>
 
-<div class="container-fluid">
+<div class="container-fluid titulocat">
     <div class="row">
-        <div class="col-md-12 text-center">
+        <div class="col-md-12">
             <h1>Produtos para seu gato</h1>
         </div>
     </div>
 </div>
 
-<div class="container">
+<div class="container cat">
     <div class="row">
         <div class="col-md-4">
         <div class="card" style="width: 18rem;">
             <img src="imagens/arranhadores.webp" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
                 <h5 class="card-title">Arranhador</h5>
-                <a href="#" class="btn btn-primary">R$45,97</a>
+                <p class="card-text">R$45,97</p>
+                <a href="#" class="btn btn-primary">Comprar</a>
             </div>
         </div>
         </div>
@@ -28,7 +29,8 @@
             <img src="imagens/coleiragato.webp" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
                 <h5 class="card-title">Coleira para Gato</h5>
-                <a href="#" class="btn btn-primary">R$26,99</a>
+                <p class="card-text">R$26,99</p>
+                <a href="#" class="btn btn-primary">Comprar</a>
             </div>
         </div>
         </div>
@@ -38,21 +40,23 @@
             <img src="imagens/luva.jpg" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
                 <h5 class="card-title">Luva tira pelo</h5>
-                <a href="#" class="btn btn-primary">R$15,97</a>
+                <p class="card-text">R$15,97</p>
+                <a href="#" class="btn btn-primary">Comprar</a>
             </div>
         </div>
         </div>
     </div>
 </div>
 
-<div class="container">
+<div class="container cat">
     <div class="row">
         <div class="col-md-4">
         <div class="card" style="width: 18rem;">
             <img src="imagens/escova.jpg" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
                 <h5 class="card-title">Escova de canto</h5>
-                <a href="#" class="btn btn-primary">R$8,99</a>
+                <p class="card-text">R$8,99</p>
+                <a href="#" class="btn btn-primary">Comprar</a>
             </div>
         </div>
         </div>
@@ -62,7 +66,8 @@
             <img src="imagens/casagato.jpg" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
                 <h5 class="card-title">Casa para Gato</h5>
-                <a href="#" class="btn btn-primary">R$95,99</a>
+                <p class="card-text">R$95,99</p>
+                <a href="#" class="btn btn-primary">Comprar</a>
             </div>
         </div>
         </div>
@@ -72,7 +77,8 @@
             <img src="imagens/catnips.webp" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
                 <h5 class="card-title">Catnip</h5>
-                <a href="#" class="btn btn-primary">R$14,98</a>
+                <p class="card-text">R$14,98</p>
+                <a href="#" class="btn btn-primary">Comprar</a>
             </div>
         </div>
         </div>

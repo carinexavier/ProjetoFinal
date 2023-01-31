@@ -1,0 +1,36 @@
+.titulobt, .titulofarm, .tituloprom, 
+.titulodog, .titulocat, .titulopets {
+    background-color: #70ccfc;
+    border-radius: 15px;
+    margin-right: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.bt img, .farm img, .prom img,
+.dog img, .cat img, .pets img{
+    height:250px;
+    width: auto;
+}
+
+.formbt, .formvet {
+    background: #fc7414;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.farm, .prom, .dog, .cat, .pets {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.vet img{
+    height:30rem;
+    width: 90rem;
+    margin-top: 15px;
+}
+

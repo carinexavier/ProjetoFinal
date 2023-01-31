@@ -3,16 +3,16 @@
     require_once 'menu.php';
 ?>
 
-<div class="container-fluid">
+<div class="container-fluid titulobt">
     <div class="row">
-        <div class="col-md-12 text-center">
+        <div class="col-md-12">
             <h1>Procedimentos oferecidos:</h1>
         </div>
     </div>
 </div>
     
 
-<div class="container">
+<div class="container bt">
     <div class="row">
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
@@ -44,7 +44,7 @@
 </div>
 
 <form>
-<div class="container">
+<div class="container-fluid formbt">
     <div class="row">
         <div class="col-md-12 text-center">
             <h3>Faça seu agendamento!</h3>
@@ -75,17 +75,23 @@
     </div>
     
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="form-group">
                 <label for="exampleInputEmail1">Endereço de email</label>
                 <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">                   
             </div>
         </div>
         
-        <div class="col-md-6">        
+        <div class="col-md-4">        
             <div class="form-group">            
                 <label for="cpf">Cpf</label>
                 <input type="text" name="cpf" class="form-control" onkeypress="$(this).mask('000.000.000-00');" placeholder="Seu CPF">
+            </div>
+        </div>
+        <div class="col-md-4">            
+            <div class="form-group">
+                <label for="cep">Cep</label>
+                <input type="text" name="cep" class="form-control" id="cep" onblur="pesquisacep(this.value)" placeholder="Seu CEP">                    
             </div>
         </div>
     </div>

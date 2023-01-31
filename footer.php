@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fixed">
       <div class="row text-center rodape" >
           <div class="col-md-4 logo">
             <img src="imagens/logovazadocut.png" class="img-fluid"> 
