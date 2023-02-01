@@ -1,4 +1,4 @@
-<div class="container-fixed">
+<div class="container-fluid">
       <div class="row text-center rodape" >
           <div class="col-md-4 logo">
             <img src="imagens/logovazadocut.png" class="img-fluid"> 
@@ -21,7 +21,7 @@
                 <a class="nav-link" href="sobrenos.php">Sobre Nós</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="admin.php">Área Admnistrativa</a>
+                <a class="nav-link" href="admlogin.php">Área Admnistrativa</a>
               </li>
             </ul> 
           </div>

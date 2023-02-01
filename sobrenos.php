@@ -3,19 +3,16 @@
     require_once 'menu.php';
 ?>
 
-<div class="container sobre">
+<div class="container-fluid titulosobre">
     <div class="row">
         <div class="col-md-12">
-        <h2>Sobre Nós</h2>
+        <h2><u><i>Sobre Nós</i></u></h2>
         </div>
     </div>
-</div>
-
-<div class="container sobren">
     <div class="row">
         <div class="col-md-12">
-        <p>A WithLove é um pet shop que busca sempre trazer o melhor para o seu pet!</p> 
-        <p>Trabalhamos com amor e carinho, para oferecer o melhor para os clientes, 
+        <p>A WithLove é um pet shop que busca trazer o melhor para o seu pet sempre!</p> 
+        <p>Trabalhamos com amor para oferecer o melhor para os clientes, 
         temos produtos ofertados das melhores qualidades do mercado e com colaboradores experientes e amigaveis.</p>
         </div>
     </div>

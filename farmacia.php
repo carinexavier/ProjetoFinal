@@ -1,6 +1,7 @@
 <?php
     require_once 'head.php';
     require_once 'menu.php';
+    require_once 'conexao.php';
 ?>
 
 <div class="container-fluid titulofarm">

@@ -1,11 +1,12 @@
 <?php
     require_once 'head.php';
     require_once 'menu.php';
+    require_once 'conexao.php';
 ?>
 
 <div class="container-fluid vet">
     <div class="row" >
-        <div class="col-md-12">
+        <div class="col-md-12 text-center">
             <img src="imagens/_bannervet.png" class="img-fluid">
         </div>
     </div>
