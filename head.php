@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">  
     <link rel="stylesheet" href="paginas.css">
-    <link rel="stylesheet" href="sobrenos.css">
     <script src="Scripts/cep.js"></script>
     <link rel="shortcut icon" href="imagens/faviconvazadocut.png">
 <title>With Love - Pet Shop</title>
