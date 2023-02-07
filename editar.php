@@ -18,7 +18,7 @@
     }
     else{
         $_SESSION['msg'] = "Funcionário não encontrado!";
-        header("Location : relfuncionarios.php");
+        header("Location : relfuncionario.php");
     }
 
 
@@ -29,6 +29,12 @@
         <div class="row">
                 <div class="col-md-12 text-center">
                     <h3>Controle de Funcionários</h3>
+                </div>
+        </div>
+
+        <div class="row">
+                <div class="col-md-12 text-center">
+                   <img src="<?php echo $foto; ?>" style=width:150px;height:150px;>
                 </div>
         </div>
 
@@ -143,25 +149,32 @@
 
         <div class="row">     
 
-            <div class="col-md-5">
+            <div class="col-md-3">
               <div class="form-group">
                  <label for="bairro">Bairro</label><p>
                  <input type="text" class="form-control" id="bairro" name="bairro">
                 </div>
             </div>
 
-            <div class="col-md-5">
+            <div class="col-md-3">
               <div class="form-group">
                  <label for="cidade">Cidade</label><p>
                  <input type="text" class="form-control" id="cidade" name="cidade">
                 </div>
             </div>
 
-            <div class="col-md-2  ">
+            <div class="col-md-2">
               <div class="form-group">
                  <label for="uf">Estado</label><p>
                  <input type="text" class="form-control" id="uf" name="uf">
                 </div>
+            </div>
+
+            <div class="col-md-4">
+                 <div class="form-group">
+                     <label for="foto">Foto</label><p>
+                    <input type="file" class="form-control" name="foto">
+                </div>    
             </div>
         </div>
             

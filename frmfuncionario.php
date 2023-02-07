@@ -3,7 +3,7 @@
 ?>
 
 <form method="POST" action="controlefuncionario.php" enctype="multipart/form-data">
-    <div class="container">
+    <div class="container frmfuncionario">
         <div class="row">
                 <div class="col-md-12 text-center">
                     <h3>Cadastro de Funcionários</h3>
@@ -20,7 +20,7 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="telefone">Telefone</label>
-                    <input type="text" name="telefone" class="form-control" onkeypress="$(this).mask('(00)00000-0000')">
+                    <input type="text" name="telefone" class="form-control" onkeypress="$(this).mask('(00)00000-0000');">
                 </div>
             </div>
              <div class="col-md-2">        
@@ -47,7 +47,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Endereço de email</label>
-                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">                   
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">                   
                 </div>
             </div>
         </div>
@@ -80,40 +80,51 @@
         </div>
 
         <div class="row">     
-            <div class="col-md-3">
-              <div class="form-group">
-                 <label for="bairro">Bairro</label><p>
-                 <input type="text" class="form-control" id="bairro" name="bairro">
+
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label for="bairro">Bairro</label><p>
+                    <input type="text" class="form-control" id="bairro" name="bairro">
                 </div>
             </div>
-            <div class="col-md-3">
-              <div class="form-group">
-                 <label for="cidade">Cidade</label><p>
-                 <input type="text" class="form-control" id="cidade" name="cidade">
+
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label for="cidade">Cidade</label><p>
+                    <input type="text" class="form-control" id="cidade" name="cidade">
                 </div>
             </div>
-            <div class="col-md-3">
-              <div class="form-group">
-                 <label for="uf">Estado</label><p>
-                 <input type="text" class="form-control" id="uf" name="uf">
-                </div>
-            </div>
-            <div class="col-md-3">
-              <div class="form-group">
-                 <label for="senha">Informe uma Senha</label><p>
-                 <input type="password" class="form-control" name="senha">
+
+            <div class="col-md-2  ">
+                <div class="form-group">
+                    <label for="uf">UF</label><p>
+                    <input type="text" class="form-control" id="uf" name="uf">
                 </div>
             </div>
         </div>
-        
+
         <div class="row">   
-            <div class="col-md-12 text-right">
+
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label for="senha">Informe uma Senha</label><p>
+                    <input type="password" class="form-control" name="senha">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="foto">Foto</label><p>
+                    <input type="file" class="form-control" name="foto">
+                </div>
+            </div>
+          
+            <div class="col-md-3 text-right">
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Enviar" name="btncad">
                 </div>  
             </div>
         </div>
-    </div>
 </form>
 
 <?php

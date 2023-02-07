@@ -3,6 +3,35 @@ include_once 'conexao.php';
 
 $dadoscad = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
+if(isset($_FILES['foto'])){
+    $arquivo = ($_FILES['foto']);
+
+
+    if($arquivo['error']){
+        echo 'Erro ao carregar arquivo';
+        header ("Location: frmfuncionario.php");
+    }
+
+    $pasta = "fotos/";
+    $nomearquivo = $arquivo['name'];
+    $novonome = uniqid();
+    $extensao = strtolower(pathinfo($nomearquivo, PATHINFO_EXTENSION));
+
+    if($extensao!="jpg" && $extensao!="png" && $extensao!="webp"){
+        die("Tipo não aceito");
+    }
+    else{
+        $salvaimg = move_uploaded_file($arquivo['tmp_name'], $pasta . $novonome . "." . $extensao);
+
+        if($salvaimg){
+            $path = $pasta . $novonome . "." . $extensao;
+           
+        }
+
+    }
+
+}
+
 if(!empty($dadoscad["btncad"])){
            
     // var_dump($dadoscad);
@@ -30,9 +59,9 @@ if(!empty($dadoscad["btncad"])){
         $status = "A";
 
         $sql = "insert into funcionario(nome,telefone,cpf,qualificacao,
-        experiencia,cep,numerocasa,complemento,email,senha,status)values
+        experiencia,cep,numerocasa,complemento,email,senha,status,foto)values
         (:nome,:telefone,:cpf,:qualificacao,:experiencia,:cep,
-        :numerocasa,:complemento,:email,:senha,:status)";
+        :numerocasa,:complemento,:email,:senha,:status,:foto)";
 
       	$salvar= $conn->prepare($sql);
         $salvar->bindParam(':nome', $dadoscad['nome'], PDO::PARAM_STR);
@@ -46,17 +75,18 @@ if(!empty($dadoscad["btncad"])){
         $salvar->bindParam(':email', $dadoscad['email'], PDO::PARAM_STR);
         $salvar->bindParam(':senha', $senha, PDO::PARAM_STR);
         $salvar->bindParam(':status',$status,PDO::PARAM_STR);
+        $salvar->bindParam(':foto',$path,PDO::PARAM_STR);
         $salvar->execute();
 
             if ($salvar->rowCount()) {
                 echo "<script>
-                alert('Cadastrado com Sucesso!');
+                alert('Funcionário cadastrado com Sucesso!');
                 parent.location = 'frmfuncionario.php';
                 </script>";
                 unset($dadoscad); 
             } else {
                 echo "<script>
-                alert('Erro : Usuário não cadastrado!');
+                alert('Erro : Funcionário não cadastrado!');
                 parent.location = 'frmfuncionario.php';
                 </script>";
             }
@@ -81,8 +111,8 @@ if(!empty($dadoscad["btncad"])){
 
         $sql = "UPDATE funcionario set nome = :nome, telefone = :telefone, cpf= :cpf,
         qualificacao = :qualificacao, experiencia = :experiencia, cep = :cep, 
-        numerocasa = :numerocasa, complemento = :complemento, email = :email
-        WHERE matricula = :matricula";
+        numerocasa = :numerocasa, complemento = :complemento, email = :email, foto=:foto
+        WHERE matriculafunc = :matricula";
          
         $salvar= $conn->prepare($sql);
             $salvar->bindParam(':nome', $dadoscad['nome'], PDO::PARAM_STR);
@@ -101,13 +131,13 @@ if(!empty($dadoscad["btncad"])){
             if ($salvar->rowCount()) {
                 echo "<script>
                 alert('Dados Atualizados!');
-                parent.location = 'relfuncionarios.php';
+                parent.location = 'relfuncionario.php';
                 </script>";
                 unset($dadoscad); 
             } else {
                 echo "<script>
                 alert('Erro : Funcionário não encontrado!');
-                parent.location = 'relfuncionarios.php';
+                parent.location = 'relfuncionario.php';
                 </script>";
             }
 

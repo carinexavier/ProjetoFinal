@@ -18,16 +18,16 @@
     if (($resultado) AND ($resultado->rowCount() != 0)) {
 ?>
         
-    <table class="table">
-        <thead>
-            <th>Matrícula</th>
-            <th>Cpf</th>
-            <th>Nome</th>
-            <th>Telefone</th>
-            <th>E-mail</th>
-            <th>Função</th>
-        </thead>
-    <tbody>
+<table class="table table-bordered">
+    <thead>
+        <th>Matrícula</th>
+        <th>Cpf</th>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>E-mail</th>
+        <th>Função</th>
+    </thead>
+<tbody>
 
 <?php
     while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)) {
@@ -35,67 +35,59 @@
     extract($linha);
 ?>
                     
-    <tr>
-            <td><?php echo $matriculafunc; ?></td>
-            <td><?php echo $cpf; ?></td>
-            <td><?php echo $nome; ?></td>
-            <td><?php echo $telefone; ?></td>
-            <td><?php echo $email; ?></td>
-        <td> 
-            <?php echo "<a href='editar.php?matricula=$matriculafunc'>" ; ?>                    
-            <input type="submit" class="btn btn-primary" name="editar" value="Editar">
-        </td>
+<tr>
+    <td><?php echo $matriculafunc; ?></td>
+    <td><?php echo $cpf; ?></td>
+    <td><?php echo $nome; ?></td>
+    <td><?php echo $telefone; ?></td>
+    <td><?php echo $email; ?></td>
+    <td> 
+        <?php echo "<a href='editar.php?matricula=$matriculafunc'>" ; ?>                    
+        <input type="submit" class="btn btn-primary" name="editar" value="Editar">
+    </td>
 
-        <td>  
-            <?php echo "<a href='excluir.php?matricula=$matriculafunc'>" ; ?>               
-            <input type="submit" class="btn btn-danger" name="excluir" value="Excluir">
-        </td>
-    </tr>
+    <td>  
+        <?php echo "<a href='excluir.php?matricula=$matriculafunc'>" ; ?>               
+        <input type="submit" class="btn btn-danger" name="excluir" value="Excluir">
+    </td>
+</tr>
                                        
 <?php
     } 
 ?>
 
-    </tbody>
-    </table>
+</tbody>
+</table>
 
 <?php
 
     }
 
-    //Contar os registros no banco
     $qtregistro = "SELECT COUNT(matriculafunc) AS registros FROM funcionario WHERE status='A'";
     $resultado = $conn->prepare($qtregistro);
     $resultado->execute();
     $resposta = $resultado->fetch(PDO::FETCH_ASSOC);
 
-    //Quantidade de página que serão usadas - quantidade de registros
-    //dividido pela quantidade de registro por página
     $qnt_pagina = ceil($resposta['registros'] / $limitereg);
-
-     // Maximo de links      
+ 
      $maximo = 2;
 
-     echo "<a href='relfuncionarios.php?page=1'>Primeira</a> ";
-   // Chamar página anterior verificando a quantidade de páginas menos 1 e 
-   // também verificando se já não é primeira página
-   for ($anterior = $pag - $maximo; $anterior <= $pag - 1; $anterior++) {
+     echo "<a href='relfuncionario.php?page=1'>Primeira</a> ";
+
+     for ($anterior = $pag - $maximo; $anterior <= $pag - 1; $anterior++) {
        if ($anterior >= 1) {
-           echo "  <a href='relfuncionarios.php?page=$anterior'>$anterior</a> ";
+           echo "  <a href='relfuncionario.php?page=$anterior'>$anterior</a> ";
        }
    }
 
-   //Mostrar a página ativa
    echo "$pag";
 
-   //Chamar próxima página, ou seja, verificando a página ativa e acrescentando 1
-   // a ela
    for ($proxima = $pag + 1; $proxima <= $pag + $maximo; $proxima++) {
        if ($proxima <= $qnt_pagina) {
-           echo "<a href='relfuncionarios.php?page=$proxima'>$proxima</a> ";
+           echo "<a href='relfuncionario.php?page=$proxima'>$proxima</a> ";
        }
    }
 
-   echo "<a href='relfuncionarios.php?page=$qnt_pagina'>Última</a> ";
+   echo "<a href='relfuncionario.php?page=$qnt_pagina'>Última</a> ";
 
 ?>
