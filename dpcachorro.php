@@ -2,6 +2,13 @@
     require_once 'head.php';
     require_once 'menu.php';
     require_once 'conexao.php';
+
+    $sql = "SELECT * FROM `produto` WHERE `idcategoria` = '2';";
+    $resultado = $conn->prepare($sql);
+    $resultado -> execute();
+    
+    if(($resultado) and ($resultado->rowCount()!=0)){      
+    
 ?>
 
 <div class="container-fluid titulodog">
@@ -14,75 +21,30 @@
 
 <div class="container dog">
     <div class="row">
+    <?php       
+        while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)) {           
+            extract($linha);                          
+    ?>
         <div class="col-md-4">
         <div class="card" style="width: 18rem;">
-            <img src="imagens/casacachorro.webp" class="card-img-top" alt="Imagem de capa do card">
+            <img src="<?php echo $foto; ?>" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
-                <h5 class="card-title">Casinha</h5>
-                <p class="card-text">R$69,98</p>
-                <a href="#" class="btn btn-primary">Comprar</a>
+                <h5 class="card-title"><?php echo $nome; ?></h5>
+                <p class="card-text">R$<?php echo $preco; ?></p>
+                <form action="carrinho.php" method="post">
+                    <h6><label>Quant</label>
+                    <input type="number" name="quantcomprada" value="1" style=width:50px;></h6>
+                    <input type="hidden" name="codproduto" value="<?php echo $codproduto;?>">
+                <input type="submit" class="btn btn-primary" value="Comprar">
+                </form>
             </div>
         </div>
         </div>
+        <?php
+        }
+    }
+    ?>
 
-        <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img src="imagens/coleira.avif" class="card-img-top" alt="Imagem de capa do card">
-            <div class="card-body">
-                <h5 class="card-title">Coleira</h5>
-                <p class="card-text">R$38,97</p>
-                <a href="#" class="btn btn-primary">Comprar</a>
-            </div>
-        </div>
-        </div>
-
-        <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img src="imagens/cama.jpg" class="card-img-top" alt="Imagem de capa do card">
-            <div class="card-body">
-                <h5 class="card-title">Cama</h5>
-                <p class="card-text">R$149,99</p>
-                <a href="#" class="btn btn-primary">Comprar</a>
-            </div>
-        </div>
-        </div>
-    </div>
-</div>
-
-<div class="container dog">
-    <div class="row">
-        <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img src="imagens/osso.jpg" class="card-img-top" alt="Imagem de capa do card">
-            <div class="card-body">
-                <h5 class="card-title">Osso</h5>
-                <p class="card-text">R$24,97</p>
-                <a href="#" class="btn btn-primary">Comprar</a>
-            </div>
-        </div>
-        </div>
-
-        <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img src="imagens/comedouroebebedouro.jpg" class="card-img-top" alt="Imagem de capa do card">
-            <div class="card-body">
-                <h5 class="card-title">Comeouro e Bebedoro</h5>
-                <p class="card-text">R$34,99</p>
-                <a href="#" class="btn btn-primary">Comprar</a>
-            </div>
-        </div>
-        </div>
-
-        <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img src="imagens/macaco.webp" class="card-img-top" alt="Imagem de capa do card">
-            <div class="card-body">
-                <h5 class="card-title">Macaco de Pelucia</h5>
-                <p class="card-text">R$19,98</p>
-                <a href="#" class="btn btn-primary">Comprar</a>
-            </div>
-        </div>
-        </div>
     </div>
 </div>
 

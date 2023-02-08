@@ -2,6 +2,13 @@
     require_once 'head.php';
     require_once 'menu.php';
     require_once 'conexao.php';
+
+    $sql = "SELECT * FROM `produto` WHERE `idcategoria` = '3';";
+    $resultado = $conn->prepare($sql);
+    $resultado -> execute();
+    
+    if(($resultado) and ($resultado->rowCount()!=0)){      
+    
 ?>
 
 <div class="container-fluid titulocat">
@@ -14,75 +21,30 @@
 
 <div class="container cat">
     <div class="row">
+    <?php       
+        while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)) {           
+            extract($linha);                          
+    ?>
         <div class="col-md-4">
         <div class="card" style="width: 18rem;">
-            <img src="imagens/arranhadores.webp" class="card-img-top" alt="Imagem de capa do card">
+            <img src="<?php echo $foto; ?>" class="card-img-top" alt="Imagem de capa do card">
             <div class="card-body">
-                <h5 class="card-title">Arranhador</h5>
-                <p class="card-text">R$45,97</p>
-                <a href="#" class="btn btn-primary">Comprar</a>
+                <h5 class="card-title"><?php echo $nome; ?></h5>
+                <p class="card-text">R$<?php echo $preco; ?></p>
+                <form action="carrinho.php" method="post">
+                    <h6><label>Quant</label>
+                    <input type="number" name="quantcomprada" value="1" style=width:50px;></h6>
+                    <input type="hidden" name="codproduto" value="<?php echo $codproduto;?>">
+                <input type="submit" class="btn btn-primary" value="Comprar">
+                </form>
             </div>
         </div>
         </div>
+        <?php
+        }
+    }
+    ?>
 
-        <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img src="imagens/coleiragato.webp" class="card-img-top" alt="Imagem de capa do card">
-            <div class="card-body">
-                <h5 class="card-title">Coleira para Gato</h5>
-                <p class="card-text">R$26,99</p>
-                <a href="#" class="btn btn-primary">Comprar</a>
-            </div>
-        </div>
-        </div>
-
-        <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img src="imagens/luva.jpg" class="card-img-top" alt="Imagem de capa do card">
-            <div class="card-body">
-                <h5 class="card-title">Luva tira pelo</h5>
-                <p class="card-text">R$15,97</p>
-                <a href="#" class="btn btn-primary">Comprar</a>
-            </div>
-        </div>
-        </div>
-    </div>
-</div>
-
-<div class="container cat">
-    <div class="row">
-        <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img src="imagens/escova.jpg" class="card-img-top" alt="Imagem de capa do card">
-            <div class="card-body">
-                <h5 class="card-title">Escova de canto</h5>
-                <p class="card-text">R$8,99</p>
-                <a href="#" class="btn btn-primary">Comprar</a>
-            </div>
-        </div>
-        </div>
-
-        <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img src="imagens/casagato.jpg" class="card-img-top" alt="Imagem de capa do card">
-            <div class="card-body">
-                <h5 class="card-title">Casa para Gato</h5>
-                <p class="card-text">R$95,99</p>
-                <a href="#" class="btn btn-primary">Comprar</a>
-            </div>
-        </div>
-        </div>
-
-        <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img src="imagens/catnips.webp" class="card-img-top" alt="Imagem de capa do card">
-            <div class="card-body">
-                <h5 class="card-title">Catnip</h5>
-                <p class="card-text">R$14,98</p>
-                <a href="#" class="btn btn-primary">Comprar</a>
-            </div>
-        </div>
-        </div>
     </div>
 </div>
 

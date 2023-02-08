@@ -23,7 +23,7 @@
     -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.farm, .prom, .dog, .cat, .pets {
+.farm, .prom, .dog, .cat, .pets, .admc {
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -32,5 +32,9 @@
     height:30rem;
     width: 90rem;
     margin-top: 15px;
+}
+
+.bodyadm {
+    background: #F0E68C;
 }
 
