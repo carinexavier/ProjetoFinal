@@ -6,9 +6,9 @@
 <form method="POST" action="controleproduto.php" enctype="multipart/form-data">
     <div class="container frmproduto">
         <div class="row">
-                <div class="col-md-12 text-center">
-                    <h3>Cadastro de Produtos</h3>
-                </div>
+            <div class="col-md-12 text-center">
+                <h3>Cadastro de Produtos</h3>
+            </div>
         </div>
 
         <div class="row">
@@ -25,15 +25,9 @@
                     <input type="text" name="marca" class="form-control" >
                 </div>
             </div>
-
-         
-           
         </div>
         
         <div class="row">
-           
-           
-
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="quantidade">Quantidade</label>
@@ -53,7 +47,6 @@
                     <label for="categoria">Categoria</label>
                     <select name="categoria" class="form-control">
                         <?php
-
                             $sql = "SELECT * from categoria";
                             $resultado=$conn->prepare($sql);
                             $resultado->execute();
@@ -61,48 +54,37 @@
                             if(($resultado) && ($resultado->rowCount()!=0)){
                                 while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
                                     extract($linha);
-
-                           
                         ?>                    
                     
                     <option value="<?php echo $idcategoria;?>"><?php echo $nomecategoria;  ?></option>
                         
-
                     <?php
-                                }
                             }
-                            ?>
+                        }
+                    ?>
 
                     </select>                
-
-
                 </div>
             </div>
   
-            
             <div class="col-md-5  ">
               <div class="form-group">
                  <label for="foto">Foto</label><p>
                  <input type="file" class="form-control" name="foto">
                 </div>
             </div>      
-
-
         </div>
                    
         <div class="row">   
             <div class="col-md-12 text-right">
-                <div class="form-group">
-                   
+                <div class="form-group">       
                     <input type="submit" class="btn btn-primary" value="Enviar" name="btncad">
                 </div>  
             </div>
         </div>
     </div>
-  
 </form>
 
 <?php
 require_once 'footeradm.php';
-
 ?>

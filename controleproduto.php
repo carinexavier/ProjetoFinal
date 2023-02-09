@@ -56,7 +56,7 @@
             if(!$vazio){           
            
 
-            $sql = "insert into peca(nome,marca,modeloano,quantidade,preco,foto,idcategoria)
+            $sql = "insert into produto(nome,marca,modeloano,quantidade,preco,foto,idcategoria)
             values(:nome,:marca,:modelo,:quantidade,:preco,:foto,:idcategoria)";
 
         	$salvar= $conn->prepare($sql);
@@ -92,29 +92,29 @@
         var_dump($dadoscad);
         $dadoscad = array_map('trim', $dadoscad);
         
-        $sql = "UPDATE peca set nome=:nome,marca=:marca,modeloano=:modelo,
-        quantidade=:quantidade,preco=:preco,foto=:foto 
-        where codigopeca=:codigo;
+        $sql = "UPDATE produto set nome=:nome,marca=:marca,
+        quantidade=:quantidade,preco=:preco,foto=:foto,idcategoria=:categoria 
+        where codproduto=:codigo;
          
         $salvar= $conn->prepare($sql);
             $salvar->bindParam(':nome', $dadoscad['nome'], PDO::PARAM_STR);
             $salvar->bindParam(':marca', $dadoscad['marca'], PDO::PARAM_STR);
-            $salvar->bindParam(':modelo', $dadoscad['modelo'], PDO::PARAM_STR);
             $salvar->bindParam(':quantidade', $dadoscad['quantidade'], PDO::PARAM_INT);
             $salvar->bindParam(':preco', $dadoscad['preco'], PDO::PARAM_STR);
             $salvar->bindParam(':foto', $path, PDO::PARAM_STR);
+            $salvar->bindParam(':categoria', $dadoscad['categoria'], PDO::PARAM_STR);
             $salvar->bindParam(':codigo', $dadoscad['codigo'], PDO::PARAM_INT);
             $salvar->execute();
             if ($salvar->rowCount()) {
                 echo "<script>
-                alert('Dados Atualizados!');
-                parent.location = 'relpecas.php';
+                alert('Dados do produto atualizados!');
+                parent.location = 'relproduto.php';
                 </script>";
                 unset($dadoscad); 
             } else {
                 echo "<script>
-                alert('Erro : Funcionário não encontrado!');
-                parent.location = 'relpecas.php';
+                alert('Erro : Produto não encontrado!');
+                parent.location = 'relproduto.php';
                 </script>";
             }
         }

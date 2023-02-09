@@ -17,7 +17,9 @@
 
     if (($resultado) AND ($resultado->rowCount() != 0)) {
 ?>
-        
+  
+<body style="background-color: #e3f2fd;">
+
 <table class="table table-bordered">
     <thead>
         <th>Cpf</th>
@@ -79,3 +81,5 @@
    echo "<a href='relcliente.php?page=$qnt_pagina'>Última</a> ";
 
 ?>
+
+</body>

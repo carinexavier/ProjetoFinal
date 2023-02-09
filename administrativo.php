@@ -12,7 +12,7 @@
     <img src="imagens/withlovevazado.png" width="40" height="40" class="d-inline-block align-top">
     Área Administrativa
   </a>
-    <a class="nav-link" href="sair.php">Sair</a>
+    <a class="nav-link" href="sair.php"><u>Sair</u></a>
 </nav>
 
 

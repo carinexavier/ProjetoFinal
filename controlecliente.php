@@ -3,35 +3,6 @@ include_once 'conexao.php';
 
 $dadoscad = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-if(isset($_FILES['foto'])){
-    $arquivo = ($_FILES['foto']);
-
-
-    if($arquivo['error']){
-        echo 'Erro ao carregar arquivo';
-        header ("Location: frmcliente.php");
-    }
-
-    $pasta = "fotos/";
-    $nomearquivo = $arquivo['name'];
-    $novonome = uniqid();
-    $extensao = strtolower(pathinfo($nomearquivo, PATHINFO_EXTENSION));
-
-    if($extensao!="jpg" && $extensao!="png" && $extensao!="webp"){
-        die("Tipo não aceito");
-    }
-    else{
-        $salvaimg = move_uploaded_file($arquivo['tmp_name'], $pasta . $novonome . "." . $extensao);
-
-        if($salvaimg){
-            $path = $pasta . $novonome . "." . $extensao;
-           
-        }
-
-    }
-
-}
-
 if(!empty($dadoscad["btncad"])){
            
     // var_dump($dadoscad);

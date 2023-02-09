@@ -11,7 +11,6 @@
         </div>
     </div>
 </div>
-    
 
 <div class="container bt">
     <div class="row">
@@ -44,7 +43,7 @@
     </div>
 </div>
 
-<form>
+<form method="POST" action="controlebt.php" enctype="multipart/form-data">
 <div class="container-fluid formbt">
     <div class="row">
         <div class="col-md-12 text-center">
@@ -99,15 +98,26 @@
     
     <div class="row">   
         <div class="col-md-5">
-            <form>
-                <label>Escolha o procedimento para o seu pet</label>
-                <select name="procedimento">
-                    <option value="banho">Banho</option>
-                    <option value="tosa">Tosa</option>
-                    <option value="estetica">Estética</option>
-                    <option value="pacote">Pacote completo</option>        
-                </select>
-            </form>      
+        <label for="servico">Serviço</label>
+                    <select name="servico" class="form-control">
+                        <?php
+                            $sql = "SELECT * from servico";
+                            $resultado=$conn->prepare($sql);
+                            $resultado->execute();
+
+                            if(($resultado) && ($resultado->rowCount()!=0)){
+                                while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
+                                    extract($linha);
+                        ?>                    
+                    
+                    <option value="<?php echo $idservico;?>"><?php echo $descricao;  ?></option>
+                        
+                    <?php
+                            }
+                        }
+                    ?>
+
+                    </select>       
         </div>
 
         <div class="col-md-5">

@@ -9,7 +9,7 @@
 
     $inicio = ($limitereg * $pag) - $limitereg;
 
-    $busca = "SELECT matriculafunc,nome,telefone,cpf,email from
+    $busca = "SELECT matriculafunc,nome,telefone,cpf,email,foto from
     funcionario WHERE status = 'A' LIMIT $inicio , $limitereg";         
 
     $resultado= $conn->prepare($busca);
@@ -17,9 +17,12 @@
 
     if (($resultado) AND ($resultado->rowCount() != 0)) {
 ?>
-        
+  
+<body style="background-color: #e3f2fd;">  
+
 <table class="table table-bordered">
     <thead>
+        <th>Foto</th>
         <th>Matrícula</th>
         <th>Cpf</th>
         <th>Nome</th>
@@ -36,6 +39,7 @@
 ?>
                     
 <tr>
+    <td><img src="<?php echo $foto; ?>" style=width:150px;height:150px;></td>
     <td><?php echo $matriculafunc; ?></td>
     <td><?php echo $cpf; ?></td>
     <td><?php echo $nome; ?></td>
@@ -91,3 +95,5 @@
    echo "<a href='relfuncionario.php?page=$qnt_pagina'>Última</a> ";
 
 ?>
+
+</body>
