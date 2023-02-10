@@ -41,16 +41,26 @@ USE `withlove`;
   `cpf` char(12) NOT NULL,
   FOREIGN KEY (cpf) REFERENCES cliente (cpf));
 
+ CREATE TABLE `agendamento` (
+  `idagendamento` INTEGER PRIMARY KEY auto_increment,
+  `matriculapet` INTEGER NOT NULL,
+  `cpf` char (12) NOT NULL,
+  `data` date NOT NULL,
+  `idservico` integer NOT NULL,
+  FOREIGN KEY (idservico) REFERENCES servico (idservico),
+  FOREIGN KEY (matriculapet) REFERENCES pet (matriculapet),
+  FOREIGN KEY (cpf) REFERENCES cliente (cpf));
+
   CREATE TABLE `atendimento` (
   `idatendimento` INTEGER PRIMARY KEY auto_increment,
+  `idagendamento`INTEGER NOT NULL,
   `matriculapet` INTEGER NOT NULL,
   `matriculafunc` INTEGER NOT NULL,
   `idservico` INTEGER NOT NULL,
   `precototal` DOUBLE NOT NULL,
   `formapg` varchar(20) NOT NULL,
   `data` date NOT NULL,
-  `horaentrada` varchar(30) NOT NULL,
-  `horasaida` varchar (30) NOT NULL,
+  FOREIGN KEY (idagendamento) REFERENCES agendamento (idagendamento),
   FOREIGN KEY (matriculapet) REFERENCES pet (matriculapet),
   FOREIGN KEY (matriculafunc) REFERENCES funcionario (matriculafunc),
   FOREIGN KEY (idservico) REFERENCES servico (idservico));
@@ -92,11 +102,12 @@ USE `withlove`;
   `foto` varchar(255) NOT NULL,
   FOREIGN KEY (codproduto) REFERENCES produto (codproduto));
 
+
 INSERT INTO `cliente` (`cpf`, `nome`, `telefone`, `email`, `cep`, `numerocasa`, `complemento`, `senha`) VALUES 
-('123456789-10', 'Barbara', '(21)9123-45678', 'barbara@gmail.com', '23098-030', '23', 'Casa', '123'),
-('112345678-90', 'Larissa', '(21)9112-34567', 'larissa@gmail.com', '23085-610', '7', 'Casa', '312'),
-('111234567-80', 'Maria Eduarda', '(21)9111-23456', 'mariaeduarda@gmail.com', '26551-090', '33', 'Ap. 102', '987'),
-('123456789-90', 'Cristiana', '(21)9987-65432', 'cristiana@gmail.com', '23098-030', '300', 'Ap. 7', '654');
+('123456789-10', 'Barbara', '(21)9123-45678', 'barbara@gmail.com', '23098-030', '23', 'Casa', '$2y$10$3YHIGRqsGcvb1RFC3IuLsOiy1TmJcPtffce7HZTN1k7fOS583vQoS'),
+('112345678-90', 'Larissa', '(21)9112-34567', 'larissa@gmail.com', '23085-610', '7', 'Casa', '$2y$10$aFdnU1eK/2myJ760gr5hKuOXjFPqi0uUeSfjXllfxE.zs2JR6hi56'),
+('111234567-80', 'Maria Eduarda', '(21)9111-23456', 'mariaeduarda@gmail.com', '26551-090', '33', 'Ap. 102', '$2y$10$YDf704Abcjc1N82PsH87Cuf/EMUY/5KdDWt/nbFT8hq1ZHTcckt26'),
+('123456789-90', 'Cristiana', '(21)9987-65432', 'cristiana@gmail.com', '23098-030', '300', 'Ap. 7', '$2y$10$QUj65gQeO9W4H7/pjM04G.B6MERn/0mYuWnB52.ODto9t4Mb60.ey');
 
 INSERT INTO `funcionario` (`cpf`, `nome`, `cep`, `numerocasa`, `complemento`, `telefone`,
 `qualificacao`, `experiencia`, `email`, `senha`, `status`, `foto`) VALUES 
@@ -179,3 +190,9 @@ INSERT INTO `atendimento` (`matriculapet`, `matriculafunc`, `idservico`, `precot
 --vanessa - 852
 --paula - 963
 --clarissa - 4564
+
+--senhas antigas dos clientes
+--barbara - 123
+--larissa - 312
+--maria eduarda - 987
+--cristiana - 654

@@ -62,7 +62,6 @@
 
 	?>
 
-
 <body>
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
@@ -87,8 +86,8 @@
 							<input type="password" name="senha" class="form-control" placeholder="Senha">
 						</div>
 							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<input type="submit" value="Entrar" class="btn login_btn" name="btnlogin">
-				   </div>
+				 			<input type="submit" value="Entrar" class="btn login_btn" name="btnlogin">
+				   		</div>
 					</form>
 				</div>
 		

@@ -96,7 +96,7 @@
 
             <div class="col-md-3 ">
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-primary" name="btncad">Enviar</button>
                 </div>
             </div>
         </div>
