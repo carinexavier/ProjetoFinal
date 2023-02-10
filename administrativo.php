@@ -12,16 +12,17 @@
     <img src="imagens/withlovevazado.png" width="40" height="40" class="d-inline-block align-top">
     Área Administrativa
   </a>
+    <a class="nav-link" href="index.php">Home</a>
     <a class="nav-link" href="sair.php"><u>Sair</u></a>
 </nav>
 
 
 <?php
-    //echo "Bem vindo(a)" . $_SESSION['nome'];
-    //if(!isset($_SESSION['nome'])){
-       // $_SESSION['msg'] = "Erro: Necessário realizar o login para acessar a página!";
-       // header("Location: admlogin.php");
-   // }
+    echo "Bem vindo(a)" . $_SESSION['nome'];
+    if(!isset($_SESSION['nome'])){
+       $_SESSION['msg'] = "Erro: Necessário realizar o login para acessar a página!";
+       header("Location: admlogin.php");
+    }
 ?>
 
 <div class="container admc">

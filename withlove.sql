@@ -10,7 +10,7 @@ USE `withlove`;
   `cep` char(9) NOT NULL,
   `numerocasa` int(11) NOT NULL,
   `complemento` varchar(30) DEFAULT NULL,
-  `senha` varchar(30) NOT NULL);
+  `senha` varchar(100) NOT NULL);
 
   CREATE TABLE `funcionario` (
   `matriculafunc` INTEGER PRIMARY KEY auto_increment,
@@ -23,7 +23,7 @@ USE `withlove`;
   `numerocasa` int(11) NOT NULL,
   `complemento` varchar(30) DEFAULT NULL,
   `email` varchar(150) NOT NULL,
-  `senha` varchar(30) NOT NULL,
+  `senha` varchar(100) NOT NULL,
   `status` char(1) DEFAULT NULL,
   `foto` varchar (255) NOT NULL);
 
@@ -62,7 +62,6 @@ USE `withlove`;
   `datacompra` date NOT NULL,
   FOREIGN KEY (cpf) REFERENCES cliente (cpf));
 
-
   CREATE TABLE `categoria` (
   `idcategoria` int(11) PRIMARY KEY auto_increment,
   `nomecategoria` varchar(60) NOT NULL);
@@ -85,6 +84,14 @@ USE `withlove`;
   FOREIGN KEY (idcompra) REFERENCES compra (idcompra),
   FOREIGN KEY (codproduto) REFERENCES produto (codproduto));
 
+  CREATE TABLE `carrinho` (
+  `codproduto` INTEGER NOT NULL,
+  `nome` varchar(60) NOT NULL,
+  `quantcomprada` char(4) NOT NULL,
+  `preco` double NOT NULL,
+  `foto` varchar(255) NOT NULL,
+  FOREIGN KEY (codproduto) REFERENCES produto (codproduto));
+
 INSERT INTO `cliente` (`cpf`, `nome`, `telefone`, `email`, `cep`, `numerocasa`, `complemento`, `senha`) VALUES 
 ('123456789-10', 'Barbara', '(21)9123-45678', 'barbara@gmail.com', '23098-030', '23', 'Casa', '123'),
 ('112345678-90', 'Larissa', '(21)9112-34567', 'larissa@gmail.com', '23085-610', '7', 'Casa', '312'),
@@ -94,15 +101,15 @@ INSERT INTO `cliente` (`cpf`, `nome`, `telefone`, `email`, `cep`, `numerocasa`, 
 INSERT INTO `funcionario` (`cpf`, `nome`, `cep`, `numerocasa`, `complemento`, `telefone`,
 `qualificacao`, `experiencia`, `email`, `senha`, `status`, `foto`) VALUES 
 ('234567890-01', 'Marcos', '23085-610', '6', 'Casa', '(21)9789-45612', 'Banho e Tosa', '5 Anos', 
-'marcos@gmail.com', '456', 'A', 'fotos/63e26dd9ce1fb.jpg'),
+'marcos@gmail.com', '$2y$10$bAyJheIZS1v5Xmdk507jEOLR.xMO423aKPhOc0Bw9MWZBuWRh6HXy', 'A', 'fotos/63e26dd9ce1fb.jpg'),
 ('234567890-02', 'Carlos', '23085-610', '98', 'Ap. 65', '(21)9978-94561', 'Estética Canina', '2 Anos',
-'carlos@gmail.com', '741', 'A', 'fotos/63e26e9372318.jpg'),
+'carlos@gmail.com', '$2y$10$826zAzRnVaSUrNwB4ctWZuCDsfMML4uIayAxAztq3qG..ggCNBdOC', 'A', 'fotos/63e26e9372318.jpg'),
 ('234567890-03', 'Vanessa', '23098-030', '102', 'Casa 02', '(21)9632-58741', 'Veterinária', '10 Anos',
-'vanessa@gmail.com', '852', 'A', 'fotos/63e26ea645553.jpg'),
+'vanessa@gmail.com', '$2y$10$FSKeUIi1/6Y2NbORxFJwKe1yhly.mEEPzqm4.DxnjWgSWHczeyC.G', 'A', 'fotos/63e26ea645553.jpg'),
 ('234567890-04', 'Paula', '23085-610', '754', 'Ap.87', '(21)9741-85296', 'Banho e Tosa', '7 Anos',
-'paula@gmail.com', '963', 'A', 'fotos/63e26ebce67d1.jpg'),
+'paula@gmail.com', '$2y$10$mqL9qY.ux7fxMXfVGRs5Q.Xqp0YUn0VHcSRTYQyN.9wXq325JPaiG', 'A', 'fotos/63e26ebce67d1.jpg'),
 ('159.764.283-81', 'Clarissa', '23098-030', '1', 'Casa', '(21)96785-4545', 'Veterinária', '2 Anos', 
-'clarisssa@gmail.com', '4564', 'A', 'fotos/63e28a4933c6f.jpg');
+'clarisssa@gmail.com', '$2y$10$kzDF6VASUPjin0vKX.gijez7qVZ.lSF/KeCvd9N/S89HR1Z28be8S', 'A', 'fotos/63e28a4933c6f.jpg');
 
 INSERT INTO `servico` (`descricao`, `preco`) VALUES 
 ('Banho','30'),
@@ -162,3 +169,13 @@ INSERT INTO `itens` (`quantidade`, `idcompra`, `codproduto`) VALUES
 
 INSERT INTO `atendimento` (`matriculapet`, `matriculafunc`, `idservico`, `precototal`,
 `formapg`, `data`, `horaentrada`, `horasaida`) VALUES
+
+
+
+
+--senhas antigas dos funcionarios
+--marcos - 456
+--carlos - 741
+--vanessa - 852
+--paula - 963
+--clarissa - 4564
