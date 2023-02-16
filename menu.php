@@ -19,9 +19,8 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Serviços</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="banhoetosa.php">Banho e Tosa</a>
+        <a class="dropdown-item" href="procofe.php">Procedimentos Oferecidos</a>
         <a class="dropdown-item" href="farmacia.php">Farmácia</a>
-        <a class="dropdown-item" href="veterinario.php">Veterinário</a>
         </div>
       </li>
       <li class="nav-item dropdown">

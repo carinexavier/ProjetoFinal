@@ -10,10 +10,10 @@
     $cesta = filter_input_array(INPUT_POST, FILTER_DEFAULT);
     //var_dump($cesta);
    
-    $codigopeca = $cesta["codigopeca"];
+    $codproduto = $cesta["codproduto"];
     $quantcomprada = $cesta["quantcomprada"];
 
-    $sql = "SELECT * from peca WHERE codigopeca = $codigopeca LIMIT 1";
+    $sql = "SELECT * from produto WHERE codproduto = $codproduto LIMIT 1";
     $resultado = $conn->prepare($sql);
     $resultado -> execute();
 
@@ -22,9 +22,9 @@
         extract($linha);
         
         $sql2="INSERT into carrinho(codproduto,nome,quantcomprada,preco,foto)
-        values(:codigopeca,:nome,:quantcomprada,:preco,:foto)";
+        values(:codproduto,:nome,:quantcomprada,:preco,:foto)";
         $salvar = $conn->prepare($sql2);
-        $salvar->bindParam(':codproduto', $codigopeca, PDO::PARAM_INT);
+        $salvar->bindParam(':codproduto', $codproduto, PDO::PARAM_INT);
         $salvar->bindParam(':nome', $nome, PDO::PARAM_STR);
         $salvar->bindParam(':quantcomprada', $quantcomprada, PDO::PARAM_INT);
         $salvar->bindParam(':preco', $preco, PDO::PARAM_STR);
@@ -34,6 +34,7 @@
 
     } 
 
-    header("Location:pecas.php");
+    $pag = $_SERVER['HTTP_REFERER'] ;
+    header("Location:$pag");
 
 ?>

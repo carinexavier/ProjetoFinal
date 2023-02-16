@@ -102,6 +102,13 @@ USE `withlove`;
   `foto` varchar(255) NOT NULL,
   FOREIGN KEY (codproduto) REFERENCES produto (codproduto));
 
+  CREATE TABLE `venda` (
+  `idvenda` INTEGER PRIMARY KEY auto_increment,
+  `data` date NOT NULL,
+  `valor` double NOT NULL,
+  `cpf` char (12) NOT NULL,
+  FOREIGN KEY (cpf) REFERENCES cliente (cpf));
+
 
 INSERT INTO `cliente` (`cpf`, `nome`, `telefone`, `email`, `cep`, `numerocasa`, `complemento`, `senha`) VALUES 
 ('123456789-10', 'Barbara', '(21)9123-45678', 'barbara@gmail.com', '23098-030', '23', 'Casa', '$2y$10$3YHIGRqsGcvb1RFC3IuLsOiy1TmJcPtffce7HZTN1k7fOS583vQoS'),

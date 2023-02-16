@@ -33,8 +33,9 @@
 
 				if(password_verify($dados['senha'], $linha['senha'])){
 					$_SESSION['nome'] = $linha['nome'];
+					$_SESSION['cpf'] = $linha['cpf'];
 					if($_SESSION["carrinho"]==true){
-						header("Location:cliente.php");
+						header("Location:carrinho.php");
 					}
 					else{
 						header("Location:cliente.php");

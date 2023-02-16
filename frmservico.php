@@ -1,20 +1,5 @@
-<?php
-    require_once 'head.php';
-    require_once 'menu.php';
-    require_once 'conexao.php';
-?>
-
-<div class="container-fluid vet">
-    <div class="row" >
-        <div class="col-md-12 text-center">
-            <img src="imagens/_bannervet.png" class="img-fluid">
-        </div>
-    </div>
-</div>
-
-
-<form>
-<div class="container-fluid formvet">
+<form method="POST" action="controlebt.php" enctype="multipart/form-data">
+<div class="container-fluid formbt">
     <div class="row">
         <div class="col-md-12 text-center">
             <h3>Faça seu agendamento!</h3>
@@ -25,7 +10,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label for="matricula">Nome do pet</label>
-                <input type="text" class="form-control" name="matricula" placeholder="Nome do seu Pet">    
+                <input type="text" class="form-control" name="nomepet" placeholder="Nome do seu Pet">    
             </div>
         </div>           
 
@@ -48,7 +33,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label for="exampleInputEmail1">Endereço de email</label>
-                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu Email">                   
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">                   
             </div>
         </div>
         
@@ -58,7 +43,6 @@
                 <input type="text" name="cpf" class="form-control" onkeypress="$(this).mask('000.000.000-00');" placeholder="Seu CPF">
             </div>
         </div>
-
         <div class="col-md-4">            
             <div class="form-group">
                 <label for="cep">Cep</label>
@@ -68,12 +52,35 @@
     </div>
     
     <div class="row">   
-        <div class="col-md-9">
+        <div class="col-md-5">
+        <label for="servico">Serviço</label>
+                    <select name="servico" class="form-control">
+                        <?php
+                            $sql = "SELECT * from servico";
+                            $resultado=$conn->prepare($sql);
+                            $resultado->execute();
+
+                            if(($resultado) && ($resultado->rowCount()!=0)){
+                                while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
+                                    extract($linha);
+                        ?>                    
+                    
+                    <option value="<?php echo $idservico;?>"><?php echo $descricao;  ?></option>
+                        
+                    <?php
+                            }
+                        }
+                    ?>
+
+                    </select>       
+        </div>
+
+        <div class="col-md-5">
            <label>Escolha uma data para o procedimento</label>
            <input type="date" name="data">    
         </div>
         
-        <div class="col-md-3 text-right">
+        <div class="col-md-2 text-right">
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Enviar" name="btneditar">
             </div>  
@@ -82,8 +89,3 @@
        
 </div>
 </form>
-
-
-<?php
-    require_once 'footer.php';
-?>

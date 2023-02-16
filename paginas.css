@@ -13,17 +13,14 @@
     width: auto;
 }
 
-.formbt, .formvet {
-    background: #fc7414;
+.bt {
     margin-top: 15px;
     margin-bottom: 15px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
-.farm, .prom, .dog, .cat, .pets, .admc {
+
+.farm, .prom, .dog, .cat, .pets, .admc, .clic {
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -34,7 +31,20 @@
     margin-top: 15px;
 }
 
-.bodyadm {
+.bodyadm, .bodycli{
     background: #F0E68C;
 }
 
+.agd {
+    background-color: #fc7414;
+    border-radius: 10px;
+    margin-top: 60px;
+    margin-bottom: 120px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sobrenos {
+    margin-bottom: 120px;
+}
