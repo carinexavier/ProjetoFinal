@@ -65,13 +65,6 @@ USE `withlove`;
   FOREIGN KEY (matriculafunc) REFERENCES funcionario (matriculafunc),
   FOREIGN KEY (idservico) REFERENCES servico (idservico));
 
-  CREATE TABLE `compra` (
-  `idcompra` INTEGER PRIMARY KEY auto_increment,
-  `cpf` char(12) NOT NULL,
-  `valortotal` char (30) NOT NULL,
-  `datacompra` date NOT NULL,
-  FOREIGN KEY (cpf) REFERENCES cliente (cpf));
-
   CREATE TABLE `categoria` (
   `idcategoria` int(11) PRIMARY KEY auto_increment,
   `nomecategoria` varchar(60) NOT NULL);
@@ -85,14 +78,6 @@ USE `withlove`;
   `idcategoria` int(11) NOT NULL,
   `foto` varchar(255) NOT NULL,
   FOREIGN KEY (idcategoria) REFERENCES categoria (idcategoria));
-
-  CREATE TABLE `itens` (
-  `iditem` INTEGER PRIMARY KEY auto_increment,
-  `quantidade` int(250) NOT NULL,
-  `idcompra` INTEGER NOT NULL,
-  `codproduto` INTEGER NOT NULL,
-  FOREIGN KEY (idcompra) REFERENCES compra (idcompra),
-  FOREIGN KEY (codproduto) REFERENCES produto (codproduto));
 
   CREATE TABLE `carrinho` (
   `codproduto` INTEGER NOT NULL,
@@ -109,6 +94,13 @@ USE `withlove`;
   `cpf` char (12) NOT NULL,
   FOREIGN KEY (cpf) REFERENCES cliente (cpf));
 
+  CREATE TABLE `itens` (
+  `iditem` INTEGER PRIMARY KEY auto_increment,
+  `quantidade` int(250) NOT NULL,
+  `idvenda` INTEGER NOT NULL,
+  `codproduto` INTEGER NOT NULL,
+  FOREIGN KEY (idvenda) REFERENCES venda (idvenda),
+  FOREIGN KEY (codproduto) REFERENCES produto (codproduto));
 
 INSERT INTO `cliente` (`cpf`, `nome`, `telefone`, `email`, `cep`, `numerocasa`, `complemento`, `senha`) VALUES 
 ('123456789-10', 'Barbara', '(21)9123-45678', 'barbara@gmail.com', '23098-030', '23', 'Casa', '$2y$10$3YHIGRqsGcvb1RFC3IuLsOiy1TmJcPtffce7HZTN1k7fOS583vQoS'),
@@ -180,8 +172,6 @@ INSERT INTO `produto` (`nome`, `marca`, `quantidade`, `preco`, `idcategoria`, `f
 ('Ração para Cachorro', 'Golden Formula', '50', '99.99', '5', 'produtos/racaoca.webp'),
 ('Ração para Gato', 'Whiskas', '50', '49.94', '5', 'produtos/whiskas.webp'),
 ('Ração para Calopsita', 'Zootekna', '50', '6.50', '5', 'produtos/racaopassaro.webp');
-
-INSERT INTO `compra` (`cpf`, `valortotal`, `datacompra`) VALUES 
 
 INSERT INTO `itens` (`quantidade`, `idcompra`, `codproduto`) VALUES 
 

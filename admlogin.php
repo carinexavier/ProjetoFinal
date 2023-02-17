@@ -32,13 +32,10 @@
 				//var_dump($linha);
 
 				if(password_verify($dados['senha'], $linha['senha'])){
-					$_SESSION['nome'] = $linha['nome'];
-					if($_SESSION["carrinho"]==true){
+					$_SESSION['nomeadm'] = $linha['nome'];
+				
 						header("Location:administrativo.php");
-					}
-					else{
-						header("Location:administrativo.php");
-					}
+				
 				}
 				else{
 					$_SESSION['msg'] = "Usuário ou Senha não encontrados";

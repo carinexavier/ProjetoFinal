@@ -18,8 +18,8 @@
 
 
 <?php
-    echo "Bem vindo(a) " . $_SESSION['nome'];
-    if(!isset($_SESSION['nome'])){
+    echo "Bem vindo(a) " . $_SESSION['nomeadm'];
+    if(!isset($_SESSION['nomeadm'])){
        $_SESSION['msg'] = "Erro: Necessário realizar o login para acessar a página!";
        header("Location: admlogin.php");
     }

@@ -56,13 +56,12 @@
                 extract($linha);
                 var_dump($linha);
 
-               $sqlitem = "insert into item(codproduto,idvenda,quantidade,valor)
-                values(:codproduto,:idvenda,:quantidade,:valor)";
+               $sqlitem = "insert into itens(codproduto,quantidade,idvenda)
+                values(:codproduto,:quantidade,:idvenda)";
                 $salvaritem= $conn->prepare($sqlitem);
                 $salvaritem->bindParam(':codproduto', $codproduto, PDO::PARAM_INT);
-                $salvaritem->bindParam(':idvenda', $idvenda, PDO::PARAM_INT);
                 $salvaritem->bindParam(':quantidade', $quantcomprada, PDO::PARAM_INT);
-                $salvaritem->bindParam(':valor', $preco, PDO::PARAM_STR);
+                $salvaritem->bindParam(':idvenda', $idvenda, PDO::PARAM_STR);
                 $salvaritem->execute();
 
                 $estoque = "UPDATE produto set quantidade=(quantidade - $quantcomprada)

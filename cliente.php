@@ -13,7 +13,15 @@
     Área do Cliente
   </a>
     <a class="nav-link" href="index.php">Home</a>
-    <a class="nav-link" href="sair.php"><u>Sair</u></a>
+    <a class="nav-link" href="saircli.php"><u>Sair</u></a>
+    <form class="form-inline my-2 my-lg-0">
+      <a href="frmcarrinho.php">
+      <i class="fa-solid fa-cart-shopping" style=font-size:30px;></i></a>
+      <?php
+        if($_SESSION["quant"]>0){
+        echo $_SESSION["quant"];}
+      ?>
+    </form>
 </nav>
 
 
