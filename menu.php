@@ -38,13 +38,5 @@
         <a class="nav-link" href="login.php">Entrar <i class="fa-regular fa-circle-user"></i></a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <a href="frmcarrinho.php">
-      <i class="fa-solid fa-cart-shopping" style=font-size:30px;></i></a>
-      <?php
-        if($_SESSION["quant"]>0){
-        echo $_SESSION["quant"];}
-      ?>
-    </form>
   </div>
 </nav>

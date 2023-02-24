@@ -1,5 +1,7 @@
 <?php
     require_once 'head.php';
+    session_start();
+	ob_start();
 ?>
 
 
@@ -47,7 +49,7 @@
         <div class="row text-center">
             <div class="col-md-12">
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary" name="btncad">Enviar</button>
+                    <input type="submit" class="btn btn-primary" name="btncad" value="Enviar">
                 </div>
             </div>
         </div>

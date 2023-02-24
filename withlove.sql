@@ -45,8 +45,9 @@ USE `withlove`;
   `idagendamento` INTEGER PRIMARY KEY auto_increment,
   `matriculapet` INTEGER NOT NULL,
   `cpf` char (12) NOT NULL,
-  `data` date NOT NULL,
   `idservico` integer NOT NULL,
+  `hora` time not null,
+  `data` date not null,
   FOREIGN KEY (idservico) REFERENCES servico (idservico),
   FOREIGN KEY (matriculapet) REFERENCES pet (matriculapet),
   FOREIGN KEY (cpf) REFERENCES cliente (cpf));
