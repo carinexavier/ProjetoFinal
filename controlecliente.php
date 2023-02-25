@@ -59,7 +59,7 @@ if(!empty($dadoscad["btncad"])){
      
     }
 
-    if(!empty($dadoscad["btneditar"])){
+    if(!empty($dadoscad["editarcli"])){
            
         // var_dump($dadoscad);
 
@@ -69,11 +69,11 @@ if(!empty($dadoscad["btncad"])){
              $vazio = true;
              echo "<script>
              alert('Informe um email válido!');
-             parent.location = 'frmcliente.php';
+             parent.location = 'editarcli.php';
              </script>";
         }
 
-        $sql = "UPDATE cliente set nome = :nome, telefone = :telefone, cep = :cep, 
+        $sql = "UPDATE cliente set cpf = :cpf, nome = :nome, telefone = :telefone, cep = :cep, 
         numerocasa = :numerocasa, complemento = :complemento, email = :email
         WHERE cpf = :cpf";
          
@@ -84,7 +84,7 @@ if(!empty($dadoscad["btncad"])){
             $salvar->bindParam(':numerocasa', $dadoscad['numero'], PDO::PARAM_INT);
             $salvar->bindParam(':complemento', $dadoscad['complemento'], PDO::PARAM_STR);
             $salvar->bindParam(':email', $dadoscad['email'], PDO::PARAM_STR);
-            $salvar->bindParam(':cpf', $dadoscad['cpf'], PDO::PARAM_STR);
+            $salvar->bindParam(':cpf', $cpf, PDO::PARAM_STR);
             $salvar->execute();
 
             if ($salvar->rowCount()) {

@@ -81,13 +81,13 @@ if(!empty($dadoscad["btncad"])){
             if ($salvar->rowCount()) {
                 echo "<script>
                 alert('Funcionário cadastrado com Sucesso!');
-                parent.location = 'frmfuncionario.php';
+                parent.location = 'relfuncionario.php';
                 </script>";
                 unset($dadoscad); 
             } else {
                 echo "<script>
                 alert('Erro : Funcionário não cadastrado!');
-                parent.location = 'frmfuncionario.php';
+                parent.location = 'relfuncionario.php';
                 </script>";
             }
         }
@@ -95,7 +95,7 @@ if(!empty($dadoscad["btncad"])){
     }
 
 
-    if(!empty($dadoscad["btneditar"])){
+    if(!empty($dadoscad["editarfunc"])){
            
         // var_dump($dadoscad);
 
@@ -105,7 +105,7 @@ if(!empty($dadoscad["btncad"])){
              $vazio = true;
              echo "<script>
              alert('Informe um email válido!');
-             parent.location = 'frmfuncionario.php';
+             parent.location = 'editarfunc.php';
              </script>";
         }
 

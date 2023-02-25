@@ -10,7 +10,8 @@ USE `withlove`;
   `cep` char(9) NOT NULL,
   `numerocasa` int(11) NOT NULL,
   `complemento` varchar(30) DEFAULT NULL,
-  `senha` varchar(100) NOT NULL);
+  `senha` varchar(100) NOT NULL,
+  `status` char(1) DEFAULT NULL);
 
   CREATE TABLE `funcionario` (
   `matriculafunc` INTEGER PRIMARY KEY auto_increment,
@@ -103,11 +104,11 @@ USE `withlove`;
   FOREIGN KEY (idvenda) REFERENCES venda (idvenda),
   FOREIGN KEY (codproduto) REFERENCES produto (codproduto));
 
-INSERT INTO `cliente` (`cpf`, `nome`, `telefone`, `email`, `cep`, `numerocasa`, `complemento`, `senha`) VALUES 
-('123456789-10', 'Barbara', '(21)9123-45678', 'barbara@gmail.com', '23098-030', '23', 'Casa', '$2y$10$3YHIGRqsGcvb1RFC3IuLsOiy1TmJcPtffce7HZTN1k7fOS583vQoS'),
-('112345678-90', 'Larissa', '(21)9112-34567', 'larissa@gmail.com', '23085-610', '7', 'Casa', '$2y$10$aFdnU1eK/2myJ760gr5hKuOXjFPqi0uUeSfjXllfxE.zs2JR6hi56'),
-('111234567-80', 'Maria Eduarda', '(21)9111-23456', 'mariaeduarda@gmail.com', '26551-090', '33', 'Ap. 102', '$2y$10$YDf704Abcjc1N82PsH87Cuf/EMUY/5KdDWt/nbFT8hq1ZHTcckt26'),
-('123456789-90', 'Cristiana', '(21)9987-65432', 'cristiana@gmail.com', '23098-030', '300', 'Ap. 7', '$2y$10$QUj65gQeO9W4H7/pjM04G.B6MERn/0mYuWnB52.ODto9t4Mb60.ey');
+INSERT INTO `cliente` (`cpf`, `nome`, `telefone`, `email`, `cep`, `numerocasa`, `complemento`, `senha`,`status`) VALUES 
+('123456789-10', 'Barbara', '(21)9123-45678', 'barbara@gmail.com', '23098-030', '23', 'Casa', '$2y$10$3YHIGRqsGcvb1RFC3IuLsOiy1TmJcPtffce7HZTN1k7fOS583vQoS', 'A'),
+('112345678-90', 'Larissa', '(21)9112-34567', 'larissa@gmail.com', '23085-610', '7', 'Casa', '$2y$10$aFdnU1eK/2myJ760gr5hKuOXjFPqi0uUeSfjXllfxE.zs2JR6hi56', 'A'),
+('111234567-80', 'Maria Eduarda', '(21)9111-23456', 'mariaeduarda@gmail.com', '26551-090', '33', 'Ap. 102', '$2y$10$YDf704Abcjc1N82PsH87Cuf/EMUY/5KdDWt/nbFT8hq1ZHTcckt26', 'A'),
+('123456789-90', 'Cristiana', '(21)9987-65432', 'cristiana@gmail.com', '23098-030', '300', 'Ap. 7', '$2y$10$QUj65gQeO9W4H7/pjM04G.B6MERn/0mYuWnB52.ODto9t4Mb60.ey', 'A');
 
 INSERT INTO `funcionario` (`cpf`, `nome`, `cep`, `numerocasa`, `complemento`, `telefone`,
 `qualificacao`, `experiencia`, `email`, `senha`, `status`, `foto`) VALUES 

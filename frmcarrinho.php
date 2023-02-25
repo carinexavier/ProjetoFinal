@@ -27,6 +27,7 @@ $busca = "SELECT * from carrinho";
                 <th>Preço</th>
                 <th>Quantidade</th>
                 <th>Total</th>
+                <th>Funções</th>
             </tr>
         </thead>
     <tbody>
@@ -39,7 +40,7 @@ $busca = "SELECT * from carrinho";
                     
     <tr>
         <td><img src="<?php echo $foto; ?>" style=width:150px;height:150px;></td>
-        <td><?php echo $nome; echo $codproduto; ?></td>
+        <td><?php echo $nome; ?></td>
         <td><?php echo $preco; ?></td>
         <td><?php echo $quantcomprada; ?></td>
         <td><?php echo $total = $quantcomprada * $preco; 

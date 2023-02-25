@@ -10,7 +10,7 @@
     $inicio = ($limitereg * $pag) - $limitereg;
 
     $busca = "SELECT cpf,nome,telefone,email from
-    cliente LIMIT $inicio , $limitereg";         
+    cliente WHERE status = 'A' LIMIT $inicio , $limitereg";         
 
     $resultado= $conn->prepare($busca);
     $resultado->execute();
@@ -40,6 +40,15 @@
     <td><?php echo $nome; ?></td>
     <td><?php echo $telefone; ?></td>
     <td><?php echo $email; ?></td>
+    <td> 
+        <?php echo "<a href='editarcli.php?cpf=$cpf'>" ; ?>                    
+        <input type="submit" class="btn btn-primary" name="editarcli" value="Editar">
+    </td>
+
+    <td>  
+        <?php echo "<a href='excluircli.php?cpf=$cpf'>" ; ?>               
+        <input type="submit" class="btn btn-danger" name="excluircli" value="Excluir">
+    </td>
 </tr>
                                        
 <?php
@@ -53,7 +62,7 @@
 
     }
 
-    $qtregistro = "SELECT COUNT(cpf) AS registros FROM cliente";
+    $qtregistro = "SELECT COUNT(cpf) AS registros FROM cliente WHERE status='A'";
     $resultado = $conn->prepare($qtregistro);
     $resultado->execute();
     $resposta = $resultado->fetch(PDO::FETCH_ASSOC);

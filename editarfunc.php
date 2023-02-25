@@ -2,7 +2,7 @@
 
     require_once 'conexao.php';
     require_once 'head.php';
-
+    session_start();
 
     $id = filter_input(INPUT_GET, "matricula", FILTER_SANITIZE_NUMBER_INT);
 
@@ -181,8 +181,7 @@
         <div class="row">   
             <div class="col-md-12 text-right">
                 <div class="form-group">
-                   
-                    <input type="submit" class="btn btn-primary" value="Enviar" name="btneditar">
+                    <input type="submit" class="btn btn-primary" value="Enviar" name="editarfunc">
                 </div>  
             </div>
         </div>

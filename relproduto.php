@@ -58,7 +58,7 @@
                             <td><?php echo $marca; ?></td>
                             <td><?php echo $nomecategoria; ?></td>
                             <td> 
-                                <?php echo "<a href='editar.php?codigo=$codproduto'>" ; ?>                    
+                                <?php echo "<a href='editarprod.php?codigo=$codproduto'>" ; ?>                    
                                 <input type="submit" class="btn btn-primary" name="editar" value="Editar">
                             </td>
 

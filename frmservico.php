@@ -2,6 +2,7 @@
     require_once 'head.php';
     session_start();
 	ob_start();
+    
 ?>
 
 <form method="POST" action="controleservico.php" enctype="multipart/form-data">
@@ -15,30 +16,32 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                <?php echo "Cliente " . $_SESSION['nome']; ?>
+                    <label for="nome">Nome do Dono(a)</label>
+                    <input type="text" class="form-control" name="nome" 
+                    value="<?php echo $_SESSION['nome']; ?>"   
+                    >    
                 </div>
-            </div>           
+            </div>   
 
             <div class="col-md-4">
-                <label for="nomepet">Pet</label>
-                    <select name="nomepet" class="form-control">
-                        <?php
-                            $sql = "SELECT * from `pet`";
-                            $resultado=$conn->prepare($sql);
-                            $resultado->execute();
-
-                            if(($resultado) && ($resultado->rowCount()!=0)){
-                                while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
-                                    extract($linha);
-                        ?>                    
-                    
-                        <option value="<?php echo $matriculapet;?>"><?php echo $nomepet;?></option>
+                <div class="form-group">
+                    <label for="nomepet">Pet</label>
+                        <select id="nomepet" class="form-control">
+                        <?php $sql = "SELECT * from pet";
+                   
                         
-                        <?php
-                                }
-                            }
+                        if(($resultado) && ($resultado->rowCount()!=0)){
+                            while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
+                                extract($linha);
                         ?>
-                    </select>       
+
+                    <option value="<?php echo $matriculapet; ?>"><?php echo $nomepet; ?></option>
+                    <?php
+                            }
+                        }
+                    ?>    
+                        </select>
+                </div>
             </div>
   
             <div class="col-md-4">

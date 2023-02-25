@@ -46,12 +46,12 @@
     <td><?php echo $telefone; ?></td>
     <td><?php echo $email; ?></td>
     <td> 
-        <?php echo "<a href='editar.php?matricula=$matriculafunc'>" ; ?>                    
-        <input type="submit" class="btn btn-primary" name="editar" value="Editar">
+        <?php echo "<a href='editarfunc.php?matricula=$matriculafunc'>" ; ?>                    
+        <input type="submit" class="btn btn-primary" name="editarfunc" value="Editar">
     </td>
 
     <td>  
-        <?php echo "<a href='excluir.php?matricula=$matriculafunc'>" ; ?>               
+        <?php echo "<a href='excluirfunc.php?matricula=$matriculafunc'>" ; ?>               
         <input type="submit" class="btn btn-danger" name="excluir" value="Excluir">
     </td>
 </tr>
