@@ -14,7 +14,7 @@ USE `withlove`;
   `status` char(1) DEFAULT NULL);
 
   CREATE TABLE `funcionario` (
-  `matriculafunc` INTEGER PRIMARY KEY auto_increment,
+  `matricula` INTEGER PRIMARY KEY auto_increment,
   `nome` varchar(60) NOT NULL,
   `telefone` varchar(15) NOT NULL,
   `cpf` char(12) NOT NULL,
@@ -44,27 +44,28 @@ USE `withlove`;
 
  CREATE TABLE `agendamento` (
   `idagendamento` INTEGER PRIMARY KEY auto_increment,
-  `matriculapet` INTEGER NOT NULL,
+  `matriculapet` INTEGER (30) NOT NULL,
+  `nome` varchar (60) NOT NULL,
   `cpf` char (12) NOT NULL,
   `idservico` integer NOT NULL,
   `hora` time not null,
   `data` date not null,
-  FOREIGN KEY (idservico) REFERENCES servico (idservico),
   FOREIGN KEY (matriculapet) REFERENCES pet (matriculapet),
+  FOREIGN KEY (idservico) REFERENCES servico (idservico),
   FOREIGN KEY (cpf) REFERENCES cliente (cpf));
-
+  
   CREATE TABLE `atendimento` (
   `idatendimento` INTEGER PRIMARY KEY auto_increment,
   `idagendamento`INTEGER NOT NULL,
   `matriculapet` INTEGER NOT NULL,
-  `matriculafunc` INTEGER NOT NULL,
+  `matricula` INTEGER NOT NULL,
   `idservico` INTEGER NOT NULL,
   `precototal` DOUBLE NOT NULL,
   `formapg` varchar(20) NOT NULL,
   `data` date NOT NULL,
   FOREIGN KEY (idagendamento) REFERENCES agendamento (idagendamento),
   FOREIGN KEY (matriculapet) REFERENCES pet (matriculapet),
-  FOREIGN KEY (matriculafunc) REFERENCES funcionario (matriculafunc),
+  FOREIGN KEY (matricula) REFERENCES funcionario (matricula),
   FOREIGN KEY (idservico) REFERENCES servico (idservico));
 
   CREATE TABLE `categoria` (
@@ -131,10 +132,15 @@ INSERT INTO `servico` (`descricao`, `preco`) VALUES
 ('Veterinário', '150');
 
 INSERT INTO `pet` (`nomepet`, `cpf`, `raca`, `cor`, `idade`) VALUES 
-('Marley', '123456789-10', 'Golden', 'Marrom', '5 Anos'),
-('Pretinha', '112345678-90', 'Vira-Lata', 'Preto', '4 Anos'),
-('Brutus', '111234567-80', 'Pug', 'Preto e Branco', '4 Anos'),
-('Mel', '123456789-90', 'Poodle', 'Branco', '2 Anos');
+('Marley', '12345678910', 'Golden', 'Marrom', '5 Anos'),
+('Pretinha', '11234567890', 'Vira-Lata', 'Preto', '4 Anos'),
+('Brutus', '11123456780', 'Pug', 'Preto e Branco', '4 Anos'),
+('Mel', '12345678990', 'Poodle', 'Branco', '2 Anos');
+
+INSERT INTO `agendamento` (`matriculapet`, `nome`, `cpf`, `idservico`, `hora`, `data`) VALUES
+('1', 'Barbara', '12345678910', '4', '08:00:33', '2023-03-02');
+('3', 'Maria Eduarda', '11123456780', '3', '10:30:00', '2023-03-01');
+('2', 'Larissa', '11234567890', '1', '13:00:00', '2023-03-06');
 
 INSERT INTO `categoria` (`nomecategoria`) VALUES
 ('Farmácia'),
@@ -175,10 +181,6 @@ INSERT INTO `produto` (`nome`, `marca`, `quantidade`, `preco`, `idcategoria`, `f
 ('Ração para Gato', 'Whiskas', '50', '49.94', '5', 'produtos/whiskas.webp'),
 ('Ração para Calopsita', 'Zootekna', '50', '6.50', '5', 'produtos/racaopassaro.webp');
 
-INSERT INTO `itens` (`quantidade`, `idcompra`, `codproduto`) VALUES 
-
-INSERT INTO `atendimento` (`matriculapet`, `matriculafunc`, `idservico`, `precototal`,
-`formapg`, `data`, `horaentrada`, `horasaida`) VALUES
 
 
 

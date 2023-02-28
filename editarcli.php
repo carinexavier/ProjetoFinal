@@ -9,9 +9,7 @@
    $cpf= $_SESSION['cpf'];
 
    $id = filter_input(INPUT_GET, "cpf");
-    echo $id;
-
-
+    
     $busca = "SELECT * from cliente where cpf='$id' LIMIT 1"; 
 
     $resultado= $conn->prepare($busca);

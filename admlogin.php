@@ -17,7 +17,7 @@
 		if(!empty($dados["btnlogin"])){
 			var_dump($dados);
 
-			$sql = "SELECT matriculafunc, nome, email, senha 
+			$sql = "SELECT matricula, nome, email, senha 
                         FROM funcionario 
                         WHERE email =:usuario  
                         LIMIT 1";

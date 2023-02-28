@@ -21,11 +21,13 @@ if(!empty($dadoscad["btnserv"])){
 
   if(!$vazio){
 
-  $sql = "insert into agendamento(nomepet,servico,data,hora) 
-  values(:nomepet,:servico,:data,:hora)";
+  $sql = "insert into agendamento(cpf,nome,matriculapet,idservico,data,hora) 
+  values(:cpf,:nome,:matriculapet,:idservico,:data,:hora)";
   $salvar = $conn -> prepare($sql);
-  $salvar -> bindParam(':nomepet',$dadoscad['nomepet'],PDO::PARAM_STR);
-  $salvar -> bindParam(':servico',$dadoscad['servico'],PDO::PARAM_STR);
+  $salvar -> bindParam(':cpf',$dadoscad['cpf'],PDO::PARAM_STR);
+  $salvar -> bindParam(':nome',$dadoscad['nome'],PDO::PARAM_STR);
+  $salvar -> bindParam(':matriculapet',$dadoscad['matriculapet'],PDO::PARAM_INT);
+  $salvar -> bindParam(':idservico',$dadoscad['idservico'],PDO::PARAM_STR);
   $salvar -> bindParam(':data',$dadoscad['data'],PDO::PARAM_STR);
   $salvar -> bindParam(':hora',$dadoscad['hora'],PDO::PARAM_STR);
   $salvar -> execute();

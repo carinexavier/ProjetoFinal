@@ -9,7 +9,7 @@
 
     $inicio = ($limitereg * $pag) - $limitereg;
 
-    $busca = "SELECT matriculafunc,nome,telefone,cpf,email,foto from
+    $busca = "SELECT matricula,nome,telefone,cpf,email,foto from
     funcionario WHERE status = 'A' LIMIT $inicio , $limitereg";         
 
     $resultado= $conn->prepare($busca);
@@ -40,18 +40,18 @@
                     
 <tr>
     <td><img src="<?php echo $foto; ?>" style=width:150px;height:150px;></td>
-    <td><?php echo $matriculafunc; ?></td>
+    <td><?php echo $matricula; ?></td>
     <td><?php echo $cpf; ?></td>
     <td><?php echo $nome; ?></td>
     <td><?php echo $telefone; ?></td>
     <td><?php echo $email; ?></td>
     <td> 
-        <?php echo "<a href='editarfunc.php?matricula=$matriculafunc'>" ; ?>                    
+        <?php echo "<a href='editarfunc.php?matricula=$matricula'>" ; ?>                    
         <input type="submit" class="btn btn-primary" name="editarfunc" value="Editar">
     </td>
 
     <td>  
-        <?php echo "<a href='excluirfunc.php?matricula=$matriculafunc'>" ; ?>               
+        <?php echo "<a href='excluirfunc.php?matricula=$matricula'>" ; ?>               
         <input type="submit" class="btn btn-danger" name="excluir" value="Excluir">
     </td>
 </tr>
@@ -67,7 +67,7 @@
 
     }
 
-    $qtregistro = "SELECT COUNT(matriculafunc) AS registros FROM funcionario WHERE status='A'";
+    $qtregistro = "SELECT COUNT(matricula) AS registros FROM funcionario WHERE status='A'";
     $resultado = $conn->prepare($qtregistro);
     $resultado->execute();
     $resposta = $resultado->fetch(PDO::FETCH_ASSOC);

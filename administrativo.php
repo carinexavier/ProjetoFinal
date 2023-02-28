@@ -41,6 +41,7 @@
                 <a href="relcliente.php" class="list-group-item list-group-item-action">Clientes</a>
                 <a href="relfuncionario.php" class="list-group-item list-group-item-action">Funcionário</a>
                 <a href="relproduto.php" class="list-group-item list-group-item-action">Produtos</a>
+                <a href="relservico.php" class="list-group-item list-group-item-action">Serviços Agendados</a>
             </ul>
         </div>
     </div>

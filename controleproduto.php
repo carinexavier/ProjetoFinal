@@ -85,37 +85,4 @@
      
     }
 
-/*
-    if(!empty($dadoscad["btneditar"])){
-           
-        var_dump($dadoscad);
-        $dadoscad = array_map('trim', $dadoscad);
-        
-        $sql = "UPDATE produto set nome=:nome,marca=:marca,
-        quantidade=:quantidade,preco=:preco,foto=:foto,idcategoria=:categoria 
-        where codproduto=:codigo;
-         
-        $salvar= $conn->prepare($sql);
-            $salvar->bindParam(':nome', $dadoscad['nome'], PDO::PARAM_STR);
-            $salvar->bindParam(':marca', $dadoscad['marca'], PDO::PARAM_STR);
-            $salvar->bindParam(':quantidade', $dadoscad['quantidade'], PDO::PARAM_INT);
-            $salvar->bindParam(':preco', $dadoscad['preco'], PDO::PARAM_STR);
-            $salvar->bindParam(':foto', $path, PDO::PARAM_STR);
-            $salvar->bindParam(':categoria', $dadoscad['categoria'], PDO::PARAM_STR);
-            $salvar->bindParam(':codigo', $dadoscad['codigo'], PDO::PARAM_INT);
-            $salvar->execute();
-            if ($salvar->rowCount()) {
-                echo "<script>
-                alert('Dados do produto atualizados!');
-                parent.location = 'relproduto.php';
-                </script>";
-                unset($dadoscad); 
-            } else {
-                echo "<script>
-                alert('Erro : Produto não encontrado!');
-                parent.location = 'relproduto.php';
-                </script>";
-            }
-        }
-*/
 ?>

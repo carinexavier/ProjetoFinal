@@ -1,10 +1,9 @@
 <?php
     require_once 'head.php';
+    require_once 'conexao.php';
+
     session_start();
 	ob_start();
-
-    require_once 'conexao.php';
-    
 ?>
 
 <form method="POST" action="controleservico.php" enctype="multipart/form-data">
@@ -27,28 +26,23 @@
 
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="nomepet">Pet</label>
-                        <select id="nomepet" class="form-control">
+                    <label for="matriculapet">Pet</label>
+                        <select id="matriculapet" class="form-control">
                         <?php 
-                        
                         $cpf = $_SESSION['cpf'];
                         $sql = "SELECT * from pet where cpf = '$cpf'";
                         $resultado=$conn->prepare($sql);
                         $resultado->execute();
-
-                   
                         
                         if(($resultado) && ($resultado->rowCount()!=0)){
                             while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
-                                extract($linha);
-                              
+                                extract($linha);   
                         ?>
-
-                    <option value="<?php echo $matriculapet; ?>"><?php echo $nomepet; ?></option>
-                    <?php
+                        <option value="<?php echo $matriculapet; ?>"><?php echo $nomepet; ?></option>
+                        <?php
+                                }
                             }
-                        }
-                    ?>    
+                        ?>    
                         </select>
                 </div>
             </div>
@@ -56,7 +50,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                 <label for="servico">Serviço</label>
-                    <select name="servico" class="form-control">
+                    <select name="idservico" class="form-control">
                         <?php
                             $sql2= "SELECT * from servico";
                             $resultado2=$conn->prepare($sql2);
@@ -66,9 +60,7 @@
                                 while ($linha2 = $resultado2->fetch(PDO::FETCH_ASSOC)){
                                     extract($linha2);
                         ?>                    
-                    
                         <option value="<?php echo $idservico;?>"><?php echo $descricao;  ?></option>
-                        
                         <?php
                                 }
                             }
@@ -91,6 +83,7 @@
         
             <div class="col-md-2">
                 <div class="form-group">
+                   
                     <input type="submit" class="btn btn-primary" name="btnserv" value="Enviar">
                 </div>  
             </div>
