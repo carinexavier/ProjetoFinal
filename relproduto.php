@@ -61,11 +61,6 @@
                                 <?php echo "<a href='editarprod.php?codigo=$codproduto'>" ; ?>                    
                                 <input type="submit" class="btn btn-primary" name="editar" value="Editar">
                             </td>
-
-                             <td>  
-                                <?php echo "<a href='excluir.php?codigo=$codproduto'>" ; ?>               
-                                <input type="submit" class="btn btn-danger" name="excluir" value="Excluir">
-                            </td>
                         </tr>
                         
                    

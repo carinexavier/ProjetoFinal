@@ -56,13 +56,12 @@
             if(!$vazio){           
            
 
-            $sql = "insert into produto(nome,marca,modeloano,quantidade,preco,foto,idcategoria)
-            values(:nome,:marca,:modelo,:quantidade,:preco,:foto,:idcategoria)";
+            $sql = "insert into produto(nome,marca,quantidade,preco,foto,idcategoria)
+            values(:nome,:marca,:quantidade,:preco,:foto,:idcategoria)";
 
         	$salvar= $conn->prepare($sql);
             $salvar->bindParam(':nome', $dadoscad['nome'], PDO::PARAM_STR);
             $salvar->bindParam(':marca', $dadoscad['marca'], PDO::PARAM_STR);
-            $salvar->bindParam(':modelo', $dadoscad['modelo'], PDO::PARAM_STR);
             $salvar->bindParam(':quantidade', $dadoscad['quantidade'], PDO::PARAM_INT);
             $salvar->bindParam(':preco', $dadoscad['preco'], PDO::PARAM_STR);
             $salvar->bindParam(':foto',$path,PDO::PARAM_STR);

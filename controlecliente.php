@@ -3,6 +3,10 @@ include_once 'conexao.php';
 
 $dadoscad = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
+
+var_dump($dadoscad);
+
+
 if(!empty($dadoscad["btncad"])){
            
     // var_dump($dadoscad);
@@ -73,9 +77,11 @@ if(!empty($dadoscad["btncad"])){
              </script>";
         }
 
-        $sql = "UPDATE cliente set cpf = :cpf, nome = :nome, telefone = :telefone, cep = :cep, 
+        $cpf = $dadoscad['cpf'];
+
+        $sql = "UPDATE cliente set nome = :nome, telefone = :telefone, cep = :cep, 
         numerocasa = :numerocasa, complemento = :complemento, email = :email
-        WHERE cpf = :cpf";
+        WHERE cpf = '$cpf'";
          
         $salvar= $conn->prepare($sql);
             $salvar->bindParam(':nome', $dadoscad['nome'], PDO::PARAM_STR);
@@ -83,8 +89,7 @@ if(!empty($dadoscad["btncad"])){
             $salvar->bindParam(':cep', $dadoscad['cep'], PDO::PARAM_STR);
             $salvar->bindParam(':numerocasa', $dadoscad['numero'], PDO::PARAM_INT);
             $salvar->bindParam(':complemento', $dadoscad['complemento'], PDO::PARAM_STR);
-            $salvar->bindParam(':email', $dadoscad['email'], PDO::PARAM_STR);
-            $salvar->bindParam(':cpf', $cpf, PDO::PARAM_STR);
+            $salvar->bindParam(':email', $dadoscad['email'], PDO::PARAM_STR);          
             $salvar->execute();
 
             if ($salvar->rowCount()) {

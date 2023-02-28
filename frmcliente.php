@@ -61,12 +61,12 @@
 
             <div class="col-md-3"> 
                 <div class="form-group">
-                    <label for="numero">Número</label>
-                    <input type="text" class="form-control" name="numero">
+                    <label for="numerocasa">Número</label>
+                    <input type="text" class="form-control" name="numerocasa">
                 </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <div class="form-group">
                     <label for="bairro">Bairro</label>
                     <input type="text" class="form-control" id="bairro" name="bairro">
@@ -89,16 +89,23 @@
                 </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-1">
                 <div class="form-group">
                     <label for="uf">UF</label>
                     <input type="text" class="form-control" id="uf" name="uf">
                 </div>
             </div>
 
-            <div class="col-md-3 ">
+            <div class="col-md-3">
+              <div class="form-group">
+                 <label for="senha">Crie uma Senha</label><p>
+                 <input type="password" class="form-control" name="senha">
+                </div>
+            </div>
+
+            <div class="col-md-2 ">
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary" name="btncad">Enviar</button>
+                    <input type="submit" class="btn btn-primary" value="Enviar" name="btncad">
                 </div>
             </div>
         </div>

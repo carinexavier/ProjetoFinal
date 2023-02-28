@@ -2,6 +2,8 @@
     require_once 'head.php';
     session_start();
 	ob_start();
+
+    require_once 'conexao.php';
     
 ?>
 
@@ -27,12 +29,19 @@
                 <div class="form-group">
                     <label for="nomepet">Pet</label>
                         <select id="nomepet" class="form-control">
-                        <?php $sql = "SELECT * from pet";
+                        <?php 
+                        
+                        $cpf = $_SESSION['cpf'];
+                        $sql = "SELECT * from pet where cpf = '$cpf'";
+                        $resultado=$conn->prepare($sql);
+                        $resultado->execute();
+
                    
                         
                         if(($resultado) && ($resultado->rowCount()!=0)){
                             while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
                                 extract($linha);
+                              
                         ?>
 
                     <option value="<?php echo $matriculapet; ?>"><?php echo $nomepet; ?></option>
@@ -49,13 +58,13 @@
                 <label for="servico">Serviço</label>
                     <select name="servico" class="form-control">
                         <?php
-                            $sql = "SELECT * from `servico`";
-                            $resultado=$conn->prepare($sql);
-                            $resultado->execute();
+                            $sql2= "SELECT * from servico";
+                            $resultado2=$conn->prepare($sql2);
+                            $resultado2->execute();
 
-                            if(($resultado) && ($resultado->rowCount()!=0)){
-                                while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
-                                    extract($linha);
+                            if(($resultado2) && ($resultado2->rowCount()!=0)){
+                                while ($linha2 = $resultado2->fetch(PDO::FETCH_ASSOC)){
+                                    extract($linha2);
                         ?>                    
                     
                         <option value="<?php echo $idservico;?>"><?php echo $descricao;  ?></option>
