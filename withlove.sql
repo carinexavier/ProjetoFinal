@@ -138,8 +138,8 @@ INSERT INTO `pet` (`nomepet`, `cpf`, `raca`, `cor`, `idade`) VALUES
 ('Mel', '12345678990', 'Poodle', 'Branco', '2 Anos');
 
 INSERT INTO `agendamento` (`matriculapet`, `nome`, `cpf`, `idservico`, `hora`, `data`) VALUES
-('1', 'Barbara', '12345678910', '4', '08:00:33', '2023-03-02');
-('3', 'Maria Eduarda', '11123456780', '3', '10:30:00', '2023-03-01');
+('1', 'Barbara', '12345678910', '4', '08:00:33', '2023-03-02'),
+('3', 'Maria Eduarda', '11123456780', '3', '10:30:00', '2023-03-01'),
 ('2', 'Larissa', '11234567890', '1', '13:00:00', '2023-03-06');
 
 INSERT INTO `categoria` (`nomecategoria`) VALUES
